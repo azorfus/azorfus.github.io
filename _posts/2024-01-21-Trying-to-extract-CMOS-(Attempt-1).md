@@ -11,7 +11,7 @@ find the CMOS chip and attempt to extract the boot sequence, BIOS settings and w
 There were three chips on the motherboard that looked like typical flash storage chips, I assumed one of them
 to be the CMOS chip.
 
-![Picture of the chips on board](https://github.com/azorfus/azorfus.github.io/_posts/2024-01-21-Trying-to-extract-CMOS-(Attempt-1)/3chips.jpeg)
+![Picture of the chips on board](https://github.com/azorfus/azorfus.github.io/_posts/2024-01-21-Trying-to-extract-CMOS-(Attempt-1)/3chips.jpeg](https://github.com/azorfus/azorfus.github.io/blob/blog/_posts/2024-01-21-Trying-to-extract-CMOS-(Attempt-1)/3chips.jpeg?raw=true))
 
 The chips in the top two pictures are the same.
 Looking at common CMOS chips on the internet I saw that MXIC was a non-volatile chip solution provider, and I had 

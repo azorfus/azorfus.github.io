@@ -19,7 +19,7 @@ one of their chips on my board, It must be the CMOS chip right?
 So I look up the model of the chip and find the chip's [documentation][chip_documentation].
 
 The chip uses the Serial Peripheral Interface (SPI) and the pins were labelled as such
-![Picture of the pin diagram of the chip](https://github.com/azorfus/azorfus.github.io/_posts/2024-01-21-Trying-to-extract-CMOS-(Attempt-1)/pinconfig.jpeg)
+![Picture of the pin diagram of the chip](https://github.com/azorfus/azorfus.github.io/blob/blog/_posts/2024-01-21-Trying-to-extract-CMOS-(Attempt-1)/pinconfig.jpeg?raw=true)
 
 [chip_documentation]: https://www.macronix.com/Lists/Datasheet/Attachments/8667/MX25L6473F,%203V,%2064Mb,%20v1.3.pdf
 

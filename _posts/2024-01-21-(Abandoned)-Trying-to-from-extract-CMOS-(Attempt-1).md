@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Trying to extract from CMOS (Attempt 1)"
+title:  "(Abandoned) Trying to extract from CMOS (Attempt 1)"
 date:   2024-01-21 00:03:23 +0530
 categories: Hardware and Reversing
 ---

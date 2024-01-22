@@ -21,6 +21,7 @@ So I look up the model of the chip and find the chip's [documentation][chip_docu
 The chip uses the Serial Peripheral Interface (SPI) and the pins were labelled as such
 ![Picture of the pin diagram of the chip](https://github.com/azorfus/azorfus.github.io/blob/blog/_posts/2024-01-21-Trying-to-extract-CMOS-(Attempt-1)/pinconfig.jpeg?raw=true)
 
+We have our SI, SO, CS and GND pins. I hook (I actually couldn't hook up my header pins to these as I don't have grabber probes hence why this blog is at a halt) these up to the arduino following this [doc][ard_doc_spi]
 
 
 [chip_documentation]: https://www.macronix.com/Lists/Datasheet/Attachments/8667/MX25L6473F,%203V,%2064Mb,%20v1.3.pdf

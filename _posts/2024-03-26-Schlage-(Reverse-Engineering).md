@@ -67,7 +67,7 @@ Pin 5:
 Pin 2:
 
 	We use the current system time as the seed here which is printed out onto the
-	screen. use this as the seed in the same script used for pin 5 and you get
+	screen. Use this as the seed in the scripts given and you get
 	your answer.
 
 Pin 4:

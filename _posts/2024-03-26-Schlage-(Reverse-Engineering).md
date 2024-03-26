@@ -9,7 +9,7 @@ Schlage is a problem from damctf 2020, If you want the binary and any other scri
 You won't be able to find the binary at the [source](https://ctftime.org/task/13347) anymore (atleast I wasn't able to).
 
 The way the pins are ordered is pretty interesting. Each pin seems to have a corresponding unique
-value in the memory. There is an memory array called pins which seems to store the information
+value in the memory. There is a memory array called pins which seems to store the information
 about whether the pins are open or not. These pin values are then evaluated by the individual 
 pins with their unique values.
 

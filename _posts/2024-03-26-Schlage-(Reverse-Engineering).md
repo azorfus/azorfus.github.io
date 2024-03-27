@@ -48,7 +48,7 @@ Pin 1:
 	segment where we xor the rbp-0x16 value with the various values
 	we stored earlier. This algorithm is developed
 	(unknown value 6)^(0x93) = (0xee)
-	(unknown value 5)^(0x25) = (unknown value 5)
+	(unknown value 5)^(0x25) = (unknown value 6)
 	...
 	...
 	(unknown value 0)^(0x3e) = (unknown value 1)

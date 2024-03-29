@@ -5,7 +5,8 @@ date:   2024-03-29 00:14:45 +0530
 categories: Reverse Engineering and CTFs
 ---
 
-This is a problem from Barbhack CTF 2023
+This is a problem from Barbhack CTF 2023.
+
 We first decompressed the binary which was packed using the UPX executable
 packer. I took many hints from another write-up as I'm completely new to packing
 and the use of cryptographic algorithms in the binary, So I guess I can't say I

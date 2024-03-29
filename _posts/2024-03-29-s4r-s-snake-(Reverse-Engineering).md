@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "s4r's Snake (Reverse Engineering)"
+title:  "s4r's snake (Reverse Engineering)"
 date:   2024-03-29 00:14:45 +0530
 categories: Reverse Engineering and CTFs
 ---

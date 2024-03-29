@@ -4,11 +4,11 @@ packer. I took many hints from another write-up as I'm completely new to packing
 and the use of cryptographic algorithms in the binary, So I guess I can't say I
 completely solved the problem on my own but, It was still a major learning experience.
 I used the chacha20 library very conveniently provided in the write-up. It's the
-only solution found at the crackmes of the problem.
+only solution found at the crackmes of the problem by cnathansmith.
 
 By the way, Its pointless to try reversing the rest of the binary except where
 the flag is generated as we can't really do anything to 'bypass' them?
-(New dimension unlocked)
+(New dimension of understanding unlocked xD)
 I guess bruteforcing the flag with the constraints is the best bet.
 We seem to be using currently unknown password and nonce for decrypting the
 encrypted_flag. These two will be our constraints for replicating flag creation.
@@ -104,7 +104,7 @@ so \xF4\xB8\xC0\x90 give "brb{" which gives us the necessary constraints to brut
 
 The initial score is 3, We need 550 to win. We need to simulate 547 fruits.
 Inorder to stay on the same lane as the RNG given in the game.
-We'll use the same rand() and srand() functions as them.
+We'll use the same rand() and srand() functions as the game.
 Ghidra conveniently has decompiled those for us:
 
 	void srand(uint __seed)
@@ -124,5 +124,4 @@ We successfully solve the problem:
 
 	[!] Flag found at seed: 2c1c
 	[!] Flag: brb{a_snake_and_20_chachas}
-
 

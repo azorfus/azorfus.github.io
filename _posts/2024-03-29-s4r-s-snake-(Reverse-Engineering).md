@@ -114,7 +114,7 @@ so \xF4\xB8\xC0\x90 give "brb{" which gives us the necessary constraints to brut
 
 The initial score is 3, We need 550 to win. We need to simulate 547 fruits.
 Inorder to stay on the same lane as the RNG given in the game.
-We'll use the same rand() and srand() functions as them.
+We'll use the same rand() and srand() functions as the game.
 Ghidra conveniently has decompiled those for us:
 ```c
 void srand(uint __seed)

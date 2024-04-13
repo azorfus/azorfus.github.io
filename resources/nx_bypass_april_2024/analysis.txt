@@ -49,7 +49,7 @@ the pwntools and feed it just the payload but I doubt you'd get the shell even
 if it works.
 
 Lets first understand how function calls work in the low level world.
-When a function is called, A stack frame is initialized for the function, its
+When a function is called, A stack frame is initialized for the function, it is
 used to keep track of local variables and the address to jump back to after
 execution of the function.
 

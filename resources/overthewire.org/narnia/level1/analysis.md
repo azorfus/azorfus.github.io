@@ -17,7 +17,7 @@ The stack is executable, this can be confirmed with a checksec command.
 	RWX:      Has RWX segments
 
 We need shellcode that elevates the uid to narnia2 and spawns in a shell.
-A very good manual on how to write shellcode: [Shellcode Guide]("https://bista.sites.dmi.unipg.it/didattica/sicurezza-pg/buffer-overrun/hacking-book/0x2a0-writing_shellcode.html")
+A very good manual on how to write shellcode: [Shellcode Guide](https://bista.sites.dmi.unipg.it/didattica/sicurezza-pg/buffer-overrun/hacking-book/0x2a0-writing_shellcode.html)
 
 The following assembly does that for us:
 

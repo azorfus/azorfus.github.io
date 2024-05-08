@@ -77,6 +77,5 @@ Now when we run our binary, we get an elevated shell:
 	$ whoami
 	narnia2
 	$ cat /etc/narnia_pass/narnia2
-	Zzb6MIyceT
+	<password for next level>
 
-Password for Level 2 is: `Zzb6MIyceT`

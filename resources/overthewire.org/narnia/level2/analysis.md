@@ -26,6 +26,5 @@ Exploiting:
 	$ whoami
 	narnia3
 	$ cat /etc/narnia_pass/narnia3
-	8SyQ2wyEDU
+	<password for next level>
 
-Password for Level 3: `8SyQ2wyEDU`

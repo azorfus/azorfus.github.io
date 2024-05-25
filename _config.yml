@@ -21,7 +21,7 @@ baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://azorfus.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: azorfus
 github_username:  azorfus
-remote_theme: azorfus/jekyll-theme-console
+remote_theme: azorfus/jekyll-theme-minima
 
 # ***** the following are for the console theme *****
 header_pages:

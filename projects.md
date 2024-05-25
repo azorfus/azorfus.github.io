@@ -15,9 +15,9 @@ Idk what this is completely going to be lol. The main idea is to implement vecto
 
 # Miscellaneous. 
 
-	## Server - Client chat system 
-	A simple server - client IRC chat system I wrote for my school project, It contains a very shaky file transfer feature which doesn't have much use :P.
-	[Repository.](https://github.com/azorfus/PyChatServer)
+## Server - Client chat system 
+A simple server - client IRC chat system I wrote for my school project, It contains a very shaky file transfer feature which doesn't have much use :P.
+[Repository.](https://github.com/azorfus/PyChatServer)
 
-	## LeD 
-	A simple line editor inspired by edlin I wrote back in the day to understand string manipulation in C which led me to write a not very efficient (string library)[https://github.com/azorfus/StringLib]. You can find the code [here](https://github.com/azorfus/Led).
+## LeD 
+A simple line editor inspired by edlin I wrote back in the day to understand string manipulation in C which led me to write a not very efficient (string library)[https://github.com/azorfus/StringLib]. You can find the code [here](https://github.com/azorfus/Led).

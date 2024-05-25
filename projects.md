@@ -5,7 +5,7 @@ permalink: /projects/
 ---
 
 # TimeLess (UnderDev)
-A small custom debugger that I'm writing for linux in C. Uses [udis86](https://github.com/vmt/udis86) for the dissassembler. The goal is to make a very light weight debugger that lets me solve my reverse engineering and binexp challenges, It includes a graph view for disassembly and provides execution flow paths. A distant feature but the most important one: Reverse Debugging. [Repository for TimeLess.](https://github.com/azorfus/TimeLess)
+A small custom debugger that I'm writing for linux in C. Uses [udis86](https://github.com/vmt/udis86) for the dissassembler. The goal is to make a very light weight debugger that lets me solve my reverse engineering and binexp challenges, It includes a graph view for disassembly and provides execution flow paths. The feature that'll be added last but the most important: Reverse Debugging. [Repository for TimeLess.](https://github.com/azorfus/TimeLess)
 
 \
 # Zerl (UnderDev)

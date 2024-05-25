@@ -28,8 +28,7 @@ header_pages:
   - index.md
   - about.md
 
-style: dark # dark (default), light or hacker
-footer: 'follow us on <a href="https://twitter.com/xxx">twitter</a>'
+footer: 'follow me on <a href="https://twitter.com/xxx">twitter</a>'
 # ***** console prefs end here *****
 
 

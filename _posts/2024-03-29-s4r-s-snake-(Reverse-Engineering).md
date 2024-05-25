@@ -20,10 +20,10 @@ password[password_idx] = (char)current_fruit_x + password[password_idx];
 password[password_idx] = password[password_idx] * (char)current_fruit_y;
 password_idx = (password_idx + 1) % 0x20;
 ```
-
+\
 password_idx starts out as 0
 password is an empty array initially
-
+\
 If we look through the code although password creation is dependent on the current fruit's x and y coordinated. These values are completely randomly generated. We can simulate these values by using the same seed as the game. We see that srand is seeded in gameplay():
 ```assembly
 call    time
@@ -42,14 +42,14 @@ sub     rax, rdx
 mov     edi, eax
 call    srand
 ```
-
+\
 Magic-number division optimizations...
 I read more about magic-number division optimizations on a [reverseengineering.stackexchange.com](https://reverseengineering.stackexchange.com/questions/1397/how-can-i-reverse-optimized-integer-division-modulo-by-constant-operations) post, The question provided two instances of modular operation and division and what we have is very similar to what was given with the modular operation. Which makes it pretty clear that we are  just doing this:
 
 ```c	
 	seed = time(0) % 20000
 ```
-
+\
 Just to make sure once, I wrote some code in C that did the same and disassembled it.
 Here's the dissassembly for the operation % 20000:
 
@@ -66,13 +66,13 @@ Here's the dissassembly for the operation % 20000:
 0x0000000000001157 <+46>:	mov    edx,eax
 0x0000000000001159 <+48>:	mov    eax,edx
 ```
-
+\
 So basically we are seeding srand like so:
 
 ```c
 srand(time(0) % 20000)
 ```
-
+\
 Either we figure out a way to get the time when this exact instruction is called or we just bruteforce the seed since we know it lies between 0 and 19999. The latter seems more plausible.
 
 We find out how the coordinates for the new fruits are generated in add_fruit:

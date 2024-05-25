@@ -25,6 +25,7 @@ remote_theme: azorfus/jekyll-theme-console
 
 # ***** the following are for the console theme *****
 header_pages:
+  - index.md
   - projects.md
   - resources.md
   - about.md

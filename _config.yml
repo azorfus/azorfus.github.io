@@ -25,10 +25,11 @@ remote_theme: b2a3e8/jekyll-theme-console
 
 # ***** the following are for the console theme *****
 header_pages:
-  - index.md
+  - projects.md
+  - resources.md
   - about.md
 
-footer: 'follow me on <a href="https://twitter.com/xxx">twitter</a>'
+footer: 'follow me on <a href="https://twitter.com/azorfus">twitter</a>'
 # ***** console prefs end here *****
 
 

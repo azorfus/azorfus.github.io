@@ -10,14 +10,15 @@ Challenges from overthewire.org for beginners and amatuers: [Narnia](https://ove
 Challenges from overthewire.org for intermediates: [Vortex](https://overthewire.org/wargames/vortex/)\
 Challenges from pwnables.kr: [pwnables.kr](https://pwnable.kr)
 
-# Reverse Engineering\
+# Reverse Engineering
 \
 [crackmes.one: my personal favorite](https://crackmes.one/)\
 [challenges.re](https://challenges.re/)
 
-# Writing safe and good C\
+# Writing safe and good C
 \
-# Ptrace and Debuggers\
+
+# Ptrace and Debuggers
 \
 [Trace and debug the Linux kernel functions](https://shell-storm.org/blog/Trace-and-debug-the-Linux-Kernel-functons/)\
 [How debugger works](http://www.alexonlinux.com/how-debugger-works#ptrace())

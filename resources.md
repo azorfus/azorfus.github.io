@@ -6,9 +6,9 @@ permalink: /resources/
 
 # Binary Exploitation
 
-- Challenges from overthewire.org for beginners and amateurs: [Narnia](https://overthewire.org/wargames/narnia/), [Behemoth](https://overthewire.org/wargames/behemoth/), [Utumno](https://overthewire.org/wargames/utumno/), [Maze](https://overthewire.org/wargames/maze/)
-- Challenges from overthewire.org for intermediates: [Vortex](https://overthewire.org/wargames/vortex/)
-- Challenges from pwnables.kr: [pwnables.kr](https://pwnable.kr)
+- overthewire.org for beginners and amateurs: [Narnia](https://overthewire.org/wargames/narnia/), [Behemoth](https://overthewire.org/wargames/behemoth/), [Utumno](https://overthewire.org/wargames/utumno/), [Maze](https://overthewire.org/wargames/maze/)
+- overthewire.org for intermediates: [Vortex](https://overthewire.org/wargames/vortex/)
+- [pwnables.kr](https://pwnable.kr)
 
 # Reverse Engineering
 

@@ -11,7 +11,7 @@ A small custom debugger that I'm writing for linux in C. Uses [udis86](https://g
 A simple custom interpreted language written in C/C++, The goal is to learn programming language theory and how parsers work, Supports math calculations, if else statements, while loops, for loops, functions, strings and basic input/output. It's a work underdevelopment. [Repository for Zerl.](https://github.com/azorfus/Zerl)
 
 # Zarena (UnderDev) (2024)
-A custom library for implementing garbage collected strings and vectors (from C++) to C. (Zarena -> Z Arena)
+A custom library for implementing garbage collected strings and vectors (from C++) in C. (Zarena -> Z Arena)
 
 # Miscellaneous. 
 

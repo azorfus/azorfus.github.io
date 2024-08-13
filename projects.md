@@ -4,10 +4,10 @@ title: Projects
 permalink: /projects/
 ---
 
-# TimeLess (UnderDev) (2024)
-A small custom debugger that I'm writing for linux in C. Uses [udis86](https://github.com/vmt/udis86) for the dissassembler. The goal is to make a very light weight debugger that lets me solve my reverse engineering and bin-exp challenges, It includes a graph view for disassembly and provides execution flow paths. The feature that'll be added last but the most important: Reverse Debugging. [Repository for TimeLess.](https://github.com/azorfus/TimeLess)
+# Ztrace (UnderDev) (2024)
+A simple debugging utility for linux that I'm writing in C with the help of ptrace. The goal of the project is to create a tool that provides a rough summary of the memory, function calls (jumps) with breakpoints and to learn how debugging works in the linux kernel. [Repository for Ztrace.](https://github.com/azorfus/Ztrace)
 
-# Zerl (UnderDev) (2023 - 24)
+# Zerl (Halt) (2023 - 24)
 A simple custom interpreted language written in C/C++, The goal is to learn programming language theory and how parsers work. Supports math calculations, if else statements, while loops, for loops, functions, strings and basic input/output. It's a work underdevelopment. [Repository for Zerl.](https://github.com/azorfus/Zerl)
 
 # Zarena (UnderDev) (2024)

@@ -5,7 +5,7 @@ permalink: /projects/
 ---
 
 # Ztrace (UnderDev) (2024)
-A simple debugging utility for linux that I'm writing in C with the help of ptrace. The goal of the project is to create a tool that provides a rough summary of the memory, function calls (jumps) with breakpoints and to learn how debugging works in the linux kernel. [Repository for Ztrace.](https://github.com/azorfus/Ztrace)
+A simple debugging utility for linux that I'm writing in C with the help of ptrace. The goal of the project is to create a tool that provides a rough map of the memory, function calls (jumps) with breakpoints and to learn how debugging works in the linux kernel. [Repository for Ztrace.](https://github.com/azorfus/Ztrace)
 
 # Zerl (Halt) (2023 - 24)
 A simple custom interpreted language written in C/C++, The goal is to learn programming language theory and how parsers work. Supports math calculations, if else statements, while loops, for loops, functions, strings and basic input/output. It's a work underdevelopment. [Repository for Zerl.](https://github.com/azorfus/Zerl)

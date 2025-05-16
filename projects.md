@@ -3,14 +3,14 @@ layout: page
 title: Projects
 permalink: /projects/
 ---
-# ZFuzz (?) (2025)
-????
+# Zerl (UnderDev) (2025)
+A simple custom interpreted language written in Rust inspired by Lua, The goal is to learn compiler design and how parsers work. Supports math calculations, if else statements, while loops, for loops, functions, strings and basic input/output. It's a work underdevelopment.
 
-# Zerl (Halt) (2023 - 24)
-A simple custom interpreted language written in C/C++, The goal is to learn programming language theory and how parsers work. Supports math calculations, if else statements, while loops, for loops, functions, strings and basic input/output. It's a work underdevelopment. [Repository for Zerl.](https://github.com/azorfus/Zerl)
+# RISC - V Simulator (Queued) (2025)
+A RISC - V Simulator written in C to understand computer architectures and for the fun of it.
 
-# Zarena (UnderDev) (2024 - 25)
-A custom library for implementing garbage collected strings and vectors (from C++) in C. (Zarena -> Z Arena)
+# Zarena (Queued) (2025)
+A custom library for implementing garbage collected strings and vectors (from C++) in C.
 
 # Miscellaneous. 
 

@@ -20,7 +20,7 @@
 
   <main>
     <h2>{{ page.title }}</h2>
-    {{ content }}  <!-- This renders Markdown! -->
+    {{ content | markdownify }}  <!-- This renders Markdown! -->
   </main>
 </body>
 </html>

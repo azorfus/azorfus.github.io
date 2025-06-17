@@ -1,5 +1,5 @@
 ---
-layout: hacked-about
+layout: about
 title: About
 permalink: /about/
 nav: false

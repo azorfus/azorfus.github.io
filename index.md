@@ -17,7 +17,7 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
 <div style="margin-top: 1.5em;"></div>
 ## What I Work On
 
-- Reverse engineering (x86_64), Binary Exploitation techniques, ASLR, NX, stack canaries
+- Reverse engineering (x86_64), Binary Exploitation techniques: ASLR, NX, stack canaries, etc.
   
 - Designing and building a custom systems programming language and compiler targeting RISC-V
   

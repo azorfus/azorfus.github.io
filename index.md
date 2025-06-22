@@ -43,7 +43,7 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
 
 - **Email**: [azorfus@gmail.com](mailto:azorfus@gmail.com)
   
-- **LinkedIn**: [Download PDF](https://www.linkedin.com/in/eniyan-amudhan-48421a322/)
+- **LinkedIn**: [Eniyan @ LinkedIn](https://www.linkedin.com/in/eniyan-amudhan-48421a322/)
   
 - **CV**: [Download PDF](/cv.pdf)
   

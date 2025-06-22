@@ -4,7 +4,7 @@ title: Projects
 permalink: /projects/
 ---
 
-## Zerl (UnderDev) — 2025  
+## [Zerl](https://www.github.com/azorfus/Zerl) (UnderDev) — 2025  
 A low-level systems programming language written in Rust.
 
 Zerl is a minimal, statically typed language targeting bare-metal RISC-V platforms. It's built from scratch with a focus on simplicity, compiler design, and close-to-metal execution. Key components include:

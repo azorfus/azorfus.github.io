@@ -32,11 +32,9 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
 
 ### Ongoing Projects
 
-- **Zerl**  
-  Compiler and runtime for a tensor-aware systems language compiling to bare-metal RISC-V
+- **Zerl** - *Compiler and runtime for a tensor-aware systems language compiling to bare-metal RISC-V*
 
-- **RL - Sandbox**
-  A collection of RL experiments and algorithm implementations in Python
+- **RL - Sandbox** - *A collection of RL experiments and algorithm implementations in Python*
   
 - *More on the [Projects](/projects) page* <br><br>
 

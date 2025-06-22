@@ -10,8 +10,8 @@ layout: default
 
 This is where I document my work in systems programming, reverse engineering, machine learning, and music.  
 
-Most of it is technical, experimental, or somewhere in between.
-$~~~~~$
+Most of it is technical, experimental, or somewhere in between.<br><br>
+
 
 ---
 
@@ -25,8 +25,8 @@ $~~~~~$
   
 - Competing in CTFs (Google CTF, Pentathon) with a focus on reverse engineering, crypto and binary exploitation
   
-- Hobbyist Jazz Pianist
-$~~~~~$
+- Hobbyist Jazz Pianist<br><br>
+
 
 ---
 
@@ -38,8 +38,8 @@ $~~~~~$
 - **RL - Sandbox**
   A collection of RL experiments and algorithm implementations in Python
   
-- *More on the [Projects](/projects) page*
-$~~~~~$
+- *More on the [Projects](/projects) page* <br><br>
+
 
 ---
 
@@ -49,8 +49,8 @@ $~~~~~$
   
 - **CV**: [Download PDF](/cv.pdf)
   
-- **GitHub**: [@azorfus](https://github.com/azorfus)
-$~~~~~$
+- **GitHub**: [@azorfus](https://github.com/azorfus) <br><br>
+
 
 ---
 

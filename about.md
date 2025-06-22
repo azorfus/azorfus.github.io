@@ -1,7 +1,7 @@
 ---
-layout: post
+layout: about
 title: About
-permalink: /about/
+permalink: /
 nav: false
 ---
 

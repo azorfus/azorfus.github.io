@@ -12,6 +12,8 @@ This is where I document my work in systems programming, reverse engineering, ma
 Most of it is technical, experimental, or somewhere in between.
 &ensp;
 &ensp;
+&ensp;
+&ensp;
 
 ---
 
@@ -28,6 +30,8 @@ Most of it is technical, experimental, or somewhere in between.
 - Hobbyist Jazz Pianist
 &ensp;
 &ensp;
+&ensp;
+&ensp;
 
 ---
 
@@ -42,6 +46,8 @@ Most of it is technical, experimental, or somewhere in between.
 - *More on the [Projects](/projects) page*
 &ensp;
 &ensp;
+&ensp;
+&ensp;
 
 ---
 
@@ -52,6 +58,8 @@ Most of it is technical, experimental, or somewhere in between.
 - **CV**: [Download PDF](/cv.pdf)
   
 - **GitHub**: [@azorfus](https://github.com/azorfus)
+&ensp;
+&ensp;
 &ensp;
 &ensp;
 

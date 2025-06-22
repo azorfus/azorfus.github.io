@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Void | Blog?
+title: Azorfus
 email: azorfus@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Dumping ground for random research and eerie ideas.
@@ -22,6 +22,7 @@ url: "https://azorfus.github.io" # the base hostname & protocol for your site, e
 twitter_username: azorfus
 github_username:  azorfus
 remote_theme: azorfus/hacker-theme
+show_downloads: [false]
 
 # ***** the following are for the console theme *****
 header_pages:

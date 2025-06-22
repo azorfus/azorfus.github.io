@@ -6,46 +6,52 @@ title: Azorfus
 layout: default
 ---
 
-
 ## Hello, I’m Azorfus 👾
 
-Welcome to my corner of the internet — a dumping ground for random research, eerie ideas, and digital experiments.
+This is where I document my work in systems programming, reverse engineering, machine learning, and music.  
+Most of it is technical, experimental, or somewhere in between.
 
 ---
 
-### What I Do
+### What I Work On
 
-I’m into:
-
-- Reverse engineering strange things
-- Building odd tools that almost no one needs
-- Writing posts that blur the line between documentation and diary
-- Exploring weird corners of computing history
+- Reverse engineering (x86_64), Binary Exploitation techniques, ASLR, NX, stack canaries  
+- Designing and building a custom systems programming language and compiler targeting RISC-V  
+- Studying reinforcement learning: theory + hands-on (value iteration, MDPs, control)  
+- Competing in CTFs (Google CTF, Pentathon) with a focus on reverse engineering, crypto and binary exploitation
+- Hobbyist Jazz Pianist 
 
 ---
 
-### Current Projects
+### Ongoing Projects
 
-- **`hacked-jekyll`**: A minimal JSON-styled Jekyll theme (this site)
-- **`az-toolkit`**: A CLI collection of cursed utilities
-- **More on the [Projects](/projects) page**
+- **`Zerl`**  
+  Compiler and runtime for a tensor-aware systems language compiling to bare-metal RISC-V
+
+- **`RL - Sandbox`**  
+  A collection of RL experiments and algorithm implementations in Python
+  
+- *More on the [Projects](/projects) page*
 
 ---
 
 ### CV & Contact
 
-- **Email**: [you@example.com](mailto:you@example.com)
-- **CV**: [Download PDF](/cv.pdf)
+- **Email**: [azorfus@gmail.com](mailto:azorfus@gmail.com)  
+- **CV**: [Download PDF](/cv.pdf)  
 - **GitHub**: [@azorfus](https://github.com/azorfus)
 
 ---
 
-###  Tech Stack
+### Tech Stack
 
-This site is built with:
+**Languages**  
+C • C++ • Rust • Python • Assembly (x86_64)
 
-- Jekyll + GitHub Pages
-- A custom theme (based on terminal aesthetics)
-- Markdown, Liquid, and questionable CSS hacks
+**Tools & Platforms**  
+NASM • Ghidra • GDB • QEMU • Make • Git • Linux Kernel • Linux • Vim • Markdown • LaTeX
+
+**ML/AI**  
+NumPy • PyTorch (beginner) 
 
 ---

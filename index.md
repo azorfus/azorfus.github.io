@@ -13,7 +13,8 @@ This is where I document my work in systems programming, reverse engineering, ma
 Most of it is technical, experimental, or somewhere in between.<br><br>
 
 
----<br>
+---
+<br>
 
 ## What I Work On
 
@@ -28,7 +29,8 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
 - Hobbyist Jazz Pianist<br><br>
 
 
----<br>
+---
+<br>
 
 ## Ongoing Projects
 
@@ -39,7 +41,8 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
 - *More on the [Projects](/projects) page* <br><br>
 
 
----<br>
+---
+<br>
 
 ## CV & Contact
 
@@ -50,7 +53,8 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
 - **GitHub**: [@azorfus](https://github.com/azorfus) <br><br>
 
 
----<br>
+---
+<br>
 
 ## Tech Stack
 

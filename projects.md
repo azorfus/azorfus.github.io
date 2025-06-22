@@ -31,10 +31,11 @@ The project serves as a base for writing devlogs, studying algorithm behavior, a
 
 
 ## Tetris OS (Queued) (2025)
-A custom simple Tetris OS written in Zerl.
+A custom simple Tetris OS written in Zerl.<br><br>
 
 ---
 
+<br>
 # Miscellaneous. 
 
 ## Server - Client chat system (2023)

@@ -15,7 +15,6 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
 
 ---
 <br>
-
 ## What I Work On
 
 - Reverse engineering (x86_64), Binary Exploitation techniques, ASLR, NX, stack canaries
@@ -28,10 +27,8 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
   
 - Hobbyist Jazz Pianist<br><br>
 
-
 ---
 <br>
-
 ## Ongoing Projects
 
 - **Zerl** - *Compiler and runtime for a tensor-aware systems language compiling to bare-metal RISC-V*
@@ -40,10 +37,8 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
   
 - *More on the [Projects](/projects) page* <br><br>
 
-
 ---
 <br>
-
 ## CV & Contact
 
 - **Email**: [azorfus@gmail.com](mailto:azorfus@gmail.com)
@@ -52,10 +47,8 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
   
 - **GitHub**: [@azorfus](https://github.com/azorfus) <br><br>
 
-
 ---
 <br>
-
 ## Tech Stack
 
 **Languages**  

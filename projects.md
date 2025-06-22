@@ -15,7 +15,7 @@ Zerl is a minimal, statically typed language targeting bare-metal RISC-V platfor
 - Tensor and matrix types as first-class primitives (for ML support)
 - Minimal runtime and bootloader-level integration
 
-The project serves as a deep dive into compiler internals, architecture-specific codegen, and systems-level software design.
+The project serves as a deep dive into compiler internals, architecture-specific codegen, and systems-level software design.<br><br>
 
 ## RL-Sandbox  
 A personal research environment for studying reinforcement learning.
@@ -27,7 +27,7 @@ RL-Sandbox includes hand-built RL engines and algorithm implementations in Pytho
 - Instrumentation for step-by-step debugging and performance tracking
 - Tools for visualizing agent behavior and learning progress
 
-The project serves as a base for writing devlogs, studying algorithm behavior, and experimenting with variations of classic reinforcement problems.
+The project serves as a base for writing devlogs, studying algorithm behavior, and experimenting with variations of classic reinforcement problems.<br><br>
 
 
 ## Tetris OS (Queued) (2025)

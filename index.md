@@ -10,7 +10,7 @@ layout: default
 
 This is where I document my work in systems programming, reverse engineering, machine learning, and music.  
 Most of it is technical, experimental, or somewhere in between.
-
+&nbsp;
 
 ---
 
@@ -25,7 +25,7 @@ Most of it is technical, experimental, or somewhere in between.
 - Competing in CTFs (Google CTF, Pentathon) with a focus on reverse engineering, crypto and binary exploitation
   
 - Hobbyist Jazz Pianist
-  
+&nbsp;
 
 ---
 
@@ -38,7 +38,7 @@ Most of it is technical, experimental, or somewhere in between.
   A collection of RL experiments and algorithm implementations in Python
   
 - *More on the [Projects](/projects) page*
-  
+&nbsp;
 
 ---
 
@@ -49,7 +49,7 @@ Most of it is technical, experimental, or somewhere in between.
 - **CV**: [Download PDF](/cv.pdf)
   
 - **GitHub**: [@azorfus](https://github.com/azorfus)
-  
+&nbsp;
 
 ---
 

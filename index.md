@@ -11,15 +11,21 @@ layout: default
 This is where I document my work in systems programming, reverse engineering, machine learning, and music.  
 Most of it is technical, experimental, or somewhere in between.
 
+
 ---
 
 ### What I Work On
 
-- Reverse engineering (x86_64), Binary Exploitation techniques, ASLR, NX, stack canaries  
-- Designing and building a custom systems programming language and compiler targeting RISC-V  
-- Studying reinforcement learning: theory + hands-on (value iteration, MDPs, control)  
+- Reverse engineering (x86_64), Binary Exploitation techniques, ASLR, NX, stack canaries
+  
+- Designing and building a custom systems programming language and compiler targeting RISC-V
+  
+- Studying reinforcement learning: theory + hands-on (value iteration, MDPs, control)
+  
 - Competing in CTFs (Google CTF, Pentathon) with a focus on reverse engineering, crypto and binary exploitation
-- Hobbyist Jazz Pianist 
+  
+- Hobbyist Jazz Pianist
+  
 
 ---
 
@@ -32,14 +38,18 @@ Most of it is technical, experimental, or somewhere in between.
   A collection of RL experiments and algorithm implementations in Python
   
 - *More on the [Projects](/projects) page*
+  
 
 ---
 
 ### CV & Contact
 
-- **Email**: [azorfus@gmail.com](mailto:azorfus@gmail.com)  
-- **CV**: [Download PDF](/cv.pdf)  
+- **Email**: [azorfus@gmail.com](mailto:azorfus@gmail.com)
+  
+- **CV**: [Download PDF](/cv.pdf)
+  
 - **GitHub**: [@azorfus](https://github.com/azorfus)
+  
 
 ---
 

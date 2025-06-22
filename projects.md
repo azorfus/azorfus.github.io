@@ -1,10 +1,10 @@
 ---
-layout: post
+layout: default
 title: Projects
 permalink: /projects/
 ---
 
-### Zerl (UnderDev) — 2025  
+## Zerl (UnderDev) — 2025  
 A low-level systems programming language written in Rust.
 
 Zerl is a minimal, statically typed language targeting bare-metal RISC-V platforms. It's built from scratch with a focus on simplicity, compiler design, and close-to-metal execution. Key components include:
@@ -17,7 +17,7 @@ Zerl is a minimal, statically typed language targeting bare-metal RISC-V platfor
 
 The project serves as a deep dive into compiler internals, architecture-specific codegen, and systems-level software design.
 
-### RL-Sandbox  
+## RL-Sandbox  
 A personal research environment for studying reinforcement learning.
 
 RL-Sandbox includes hand-built RL engines and algorithm implementations in Python. It’s designed to support foundational learning and experimentation. The project includes:
@@ -30,7 +30,7 @@ RL-Sandbox includes hand-built RL engines and algorithm implementations in Pytho
 The project serves as a base for writing devlogs, studying algorithm behavior, and experimenting with variations of classic reinforcement problems.
 
 
-# Tetris OS (Queued) (2025)
+## Tetris OS (Queued) (2025)
 A custom simple Tetris OS written in Zerl.
 
 ---

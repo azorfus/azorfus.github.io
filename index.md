@@ -54,7 +54,7 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
 ## Tech Stack
 
 **Languages**  
-C • C++ • Rust • Python • Assembly (x86_64)
+C • C++ • Rust • Python • Assembly (x86_64, RISC V)
 
 **Tools & Platforms**  
 NASM • Ghidra • GDB • QEMU • Make • Git • Linux Kernel • Linux • Vim • Markdown • LaTeX

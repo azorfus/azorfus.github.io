@@ -13,12 +13,9 @@ permalink: /blog/
         <a href="{{ post.url | relative_url }}" class="blog-link">
           {{post.title}}
         </a>
-      
         <span class="blog-date">{{ post.date | date: "%B %d, %Y" }}</span>
       </li>
-
       <br><br> <!-- Extra space between posts -->
-
     {% endfor %}
   </ul>
 </section>

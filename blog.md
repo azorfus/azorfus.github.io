@@ -11,7 +11,7 @@ permalink: /blog/
     {% for post in site.posts %}
       <li class="blog-item">
         <a href="{{ post.url | relative_url }}" class="blog-link">
-          {{ post.title }}
+          {{post.title}}
         </a>
         <span class="blog-date">{{ post.date | date: "%B %d, %Y" }}</span>
       </li>

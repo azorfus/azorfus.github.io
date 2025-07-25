@@ -4,18 +4,12 @@ title: Projects
 permalink: /projects/
 ---
 
-## [Zerl](https://www.github.com/azorfus/Zerl) (UnderDev) — 2025  
-A low-level systems programming language written in Rust.
+## [Tag](https://www.github.com/azorfus/Tag) (UnderDev) — 2025  
+Tag is a statically-typed, imperative programming language implemented in Rust, featuring a custom lexer, parser, and AST generator. The project is designed for integration with LLVM for code generation and optimization. Tag supports modularity, control flow, and function definitions, and is structured for maintainability and extensibility. <br><br>
 
-Zerl is a minimal, statically typed language targeting bare-metal RISC-V platforms. It's built from scratch with a focus on simplicity, compiler design, and close-to-metal execution. Key components include:
+## [QTTP](https://www.github.com/azorfus/QTTP) (UnderDev) — 2025
 
-- A hand-written parser and IR
-- Backend that emits RISC-V assembly directly
-- Explicit memory and register control
-- Tensor and matrix types as first-class primitives (for ML support)
-- Minimal runtime and bootloader-level integration
-
-The project serves as a deep dive into compiler internals, architecture-specific codegen, and systems-level software design.<br><br>
+QTTP is a clean-room, zero-dependency implementation of a full HTTP/3 client over QUIC, written entirely in C. It establishes a QUIC connection via raw UDP sockets, performs the full TLS 1.3 handshake (including AEAD encryption and key derivation), and communicates with real-world HTTP/3 servers like Google and Cloudflare — all without using any external libraries for networking, TLS, or HTTP. Every protocol layer — QUIC transport, TLS crypto, HTTP/3 framing, and stream multiplexing — is hand-rolled from the RFCs. QTTP is designed as a deep systems project to explore and expose the internals of modern internet protocols through raw, low-level control.<br><br>
 
 ## RL-Sandbox  
 A personal research environment for studying reinforcement learning.

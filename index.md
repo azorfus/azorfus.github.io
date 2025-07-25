@@ -31,7 +31,9 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
 <div style="margin-top: 1.5em;"></div>
 ## Ongoing Projects
 
-- **Zerl** - *Compiler and runtime for a tensor-aware systems language compiling to bare-metal RISC-V*
+- **Tag** - *A tiny programming language made to understand parsing and code generation with LLVM.*
+
+- **QTTP** - *QTTP is a zero-dependency HTTP/3 + QUIC client written in C, built from scratch.*
 
 - **RL - Sandbox** - *A collection of RL experiments and algorithm implementations in Python*
   

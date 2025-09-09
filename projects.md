@@ -4,8 +4,8 @@ title: Projects
 permalink: /projects/
 ---
 
-## [Tag](https://www.github.com/azorfus/Tag) (UnderDev) — 2025  
-Tag is a statically-typed, imperative programming language implemented in Rust, featuring a custom lexer, parser, and AST generator. The project is designed for integration with LLVM for code generation and optimization. Tag supports modularity, control flow, and function definitions, and is structured for maintainability and extensibility. <br><br>
+## [Tag](https://www.github.com/azorfus/Tag) 2025  
+Tag is a dead parser. <br><br>
 
 ## [QTTP](https://www.github.com/azorfus/QTTP) (UnderDev) — 2025
 

@@ -31,7 +31,7 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
 <div style="margin-top: 1.5em;"></div>
 ## Ongoing Projects
 
-- **BrainFast** - "A brainf&ck compiler written in x86 assembly.*
+- **BrainFast** - *A brainf&ck compiler written in x86 assembly.*
 
 - **Punch Machine** - *A UDP Hole Puncher.*
 

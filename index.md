@@ -31,17 +31,17 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
 <div style="margin-top: 1.5em;"></div>
 ## Ongoing Projects
 
-- **BrainFast** - "A brainf*ck compiler written in x86 assembly*
+- **BrainFast** - "A brainf*ck compiler written in x86 assembly.*
 
-- **Punch Machine** - *A UDP Punch punch*
+- **Punch Machine** - *A UDP Hole Puncher.*
 
-- **Thousand** - *An attempt at writing an entire Operating System in under 1000 lines*
+- **Thousand** - *An attempt at writing an entire Operating System in under 1000 lines.*
 
 - **QTTP** - *A low-level QUIC and HTTP/3 diagnostic tool.*
 
 - **Tahl** - *An aggressive chess engine.*
 
-- **RL - Sandbox** - *A collection of RL experiments and algorithm implementations in Python*
+- **RL - Sandbox** - *A collection of RL experiments and algorithm implementations in Python.*
 
 - **Tag** - *A Dead Parser...*
   

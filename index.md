@@ -31,7 +31,7 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
 <div style="margin-top: 1.5em;"></div>
 ## Projects
 
-- **MindF\*ck** - *A brainf\*ck compiler written in x86 assembly.* (Ongoing)
+- **MindF\*ck** - *A self - transforming brainf\*ck compiler written in x86 assembly.* (Ongoing)
 
 - **Punch Machine** - *A UDP Hole Puncher.* (Ongoing)
 

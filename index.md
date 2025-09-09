@@ -31,11 +31,19 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
 <div style="margin-top: 1.5em;"></div>
 ## Ongoing Projects
 
-- **Tag** - *A tiny programming language made to understand parsing and code generation with LLVM.*
+- **BrainFast** - "A brainf*ck compiler written in x86 assembly*
 
-- **QTTP** - *A low-level QUIC and HTTP/3 client written in C using raw syscalls, featuring TLS integration, frame injection, real-time metrics, fingerprinting, and proxy functionality.*
+- **Punch Machine** - *A UDP Punch punch*
+
+- **Thousand** - *An attempt at writing an entire Operating System in under 1000 lines*
+
+- **QTTP** - *A low-level QUIC and HTTP/3 diagnostic tool.*
+
+- **Tahl** - *An aggressive chess engine.*
 
 - **RL - Sandbox** - *A collection of RL experiments and algorithm implementations in Python*
+
+- **Tag** - *A Dead Parser...*
   
 - *More on the [Projects](/projects) page* <br><br>
 

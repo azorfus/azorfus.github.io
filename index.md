@@ -29,21 +29,21 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
 
 ---
 <div style="margin-top: 1.5em;"></div>
-## Ongoing Projects
+## Projects
 
-- **MindF\*ck** - *A brainf\*ck compiler written in x86 assembly.*
+- **MindF\*ck** - *A brainf\*ck compiler written in x86 assembly.* (Ongoing)
 
-- **Punch Machine** - *A UDP Hole Puncher.*
+- **Punch Machine** - *A UDP Hole Puncher.* (Ongoing)
 
-- **Thousand Islands** - *An attempt at writing an entire Operating System in under 1000 lines.*
+- **Thousand Islands** - *An attempt at writing an entire Operating System in under 1000 lines.* (Ongoing)
 
-- **QTTP** - *A low-level QUIC and HTTP/3 diagnostic tool.*
+- **QTTP** - *A low-level QUIC and HTTP/3 diagnostic tool.* (Planned)
 
-- **Tahl** - *An aggressive chess engine.*
+- **Tahl** - *An aggressive chess engine.* (Ongoing)
 
 - **RL - Sandbox** - *A collection of RL experiments and algorithm implementations in Python.*
 
-- **Tag** - *A complete working parser with error detection for a compiler I was working on*
+- **Tag** - *A complete working parser with error detection for a compiler I was working on* (Completed Sep 2025)
   
 - *More on the [Projects](/projects) page* <br><br>
 

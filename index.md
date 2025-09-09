@@ -31,11 +31,11 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
 <div style="margin-top: 1.5em;"></div>
 ## Ongoing Projects
 
-- **BrainFast** - *A brainf&ck compiler written in x86 assembly.*
+- **MindF\*ck** - *A brainf\*ck compiler written in x86 assembly.*
 
 - **Punch Machine** - *A UDP Hole Puncher.*
 
-- **Thousand** - *An attempt at writing an entire Operating System in under 1000 lines.*
+- **Thousand Islands** - *An attempt at writing an entire Operating System in under 1000 lines.*
 
 - **QTTP** - *A low-level QUIC and HTTP/3 diagnostic tool.*
 

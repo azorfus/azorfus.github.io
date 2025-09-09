@@ -43,7 +43,7 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
 
 - **RL - Sandbox** - *A collection of RL experiments and algorithm implementations in Python.*
 
-- **Tag** - *A Dead Parser...*
+- **Tag** - *A complete working parser with error detection for a compiler I was working on*
   
 - *More on the [Projects](/projects) page* <br><br>
 

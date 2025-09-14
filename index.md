@@ -19,11 +19,9 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
 
 - Reverse engineering (x86_64), Binary Exploitation techniques: ASLR, NX, stack canaries, etc.
   
-- Designing and building a custom programming language and compiler with LLVM
-  
 - Studying reinforcement learning: theory + hands-on (value iteration, MDPs, control)
   
-- Competing in CTFs (Google CTF, Pentathon) with a focus on reverse engineering, crypto and binary exploitation
+- Competing in CTFs (Google CTF mostly :P) with a focus on reverse engineering, crypto and binary exploitation
   
 - Hobbyist Jazz Pianist<br><br>
 

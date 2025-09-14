@@ -5,7 +5,7 @@ permalink: /soul/
 ---
 
 <section id="soul">
-  <h2>Blog Posts</h2>
+  <h2>No way Posts</h2>
 
   <ul class="blog-list">
     {% for post in site.posts %}

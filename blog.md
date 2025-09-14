@@ -5,7 +5,7 @@ permalink: /soul/
 ---
 
 <section id="soul">
-  <h2>Do you know what that means??</h2>
+  <h2>My work and excursions</h2>
 
   <ul class="blog-list">
     {% for post in site.posts %}

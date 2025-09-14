@@ -7,6 +7,8 @@ permalink: /soul/
 <section id="soul">
   <h2>My work and Excursions</h2>
 
+
+  <h3> These are some of my old blog posts </h3>
   <ul class="blog-list">
     {% for post in site.posts %}
       <li class="blog-item">
@@ -15,7 +17,6 @@ permalink: /soul/
         </a>
         <span class="blog-date">{{ post.date | date: "%B %d, %Y" }}</span>
       </li>
-      <br><br> <!-- Extra space between posts -->
     {% endfor %}
   </ul>
 </section>

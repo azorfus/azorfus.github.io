@@ -6,7 +6,7 @@ permalink: /soul/
 
 <section id="soul">
   <h2>My work and Excursions</h2>
-  Hi. wow
+  Hi. wow oww
 
 
   <h3> These are some of my old blog posts </h3>

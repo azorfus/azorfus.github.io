@@ -1,10 +1,10 @@
 ---
-layout: default
-title: Blog
-permalink: /blog/
+layout: soul
+title: Soul
+permalink: /soul/
 ---
 
-<section id="blog">
+<section id="soul">
   <h2>Blog Posts</h2>
 
   <ul class="blog-list">

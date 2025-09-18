@@ -35,7 +35,7 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
 
 - **Thousand Islands** - *An attempt at writing an entire Operating System in under 1000 lines.* (Ongoing) [Repo](https://github.com/azorfus/thousandislands)
 
-- **QTTP** - *A low-level QUIC and HTTP/3 diagnostic tool.* (Planned) [Repo](https://github.com/azorfus/QTTP)
+- **QTTP** - *A low-level QUIC and HTTP/3 diagnostic tool.* (Halt) [Repo](https://github.com/azorfus/QTTP)
 
 - **Tahl** - *An aggressive chess engine.* (Ongoing) [Repo](https://github.com/azorfus/Tahl)
 

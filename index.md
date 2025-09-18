@@ -29,7 +29,7 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
 <div style="margin-top: 1.5em;"></div>
 ## Projects
 
-- **MindF\*ck** - *A self - transforming brainf\*ck compiler written in x86_64 assembly.* (Ongoing) [Repo](https://github.com/azorfus/mindfck)
+- **MindF\*ck** - *A self - transforming brainf\*ck compiler written in x86_64 assembly.* (Ongoing) [Repo](https://github.com/azorfus/mindf-ck)
 
 - **Punch Machine** - *A UDP Hole Puncher.* (Ongoing) [Repo](https://github.com/azorfus/punchmachine)
 

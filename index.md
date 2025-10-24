@@ -41,13 +41,9 @@ Most of it is technical, experimental, or somewhere in between.<br><br>
 
 ---
 <div style="margin-top: 1.5em;"></div>
-## CV & Contact
+## Contact
 
 - **Email**: [azorfus@gmail.com](mailto:azorfus@gmail.com)
-  
-- **LinkedIn**: [Eniyan @ LinkedIn](https://www.linkedin.com/in/eniyan-amudhan-48421a322/)
-  
-- **CV**: [Download PDF](/cv.pdf)
   
 - **GitHub**: [@azorfus](https://github.com/azorfus) <br><br>
 

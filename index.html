@@ -26,7 +26,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.15s, color 0.15s;
+      opacity: 0;
+      transition: opacity 0.25s ease, background 0.15s, color 0.15s;
+    }
+
+    body.loaded {
+      opacity: 1;
     }
 
     .box {
@@ -37,18 +42,13 @@
       line-height: 1.45;
     }
 
-    .name {
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
-
-    .section {
-      margin-bottom: 12px;
-    }
+    .name { font-weight: bold; margin-bottom: 12px; }
+    .section { margin-bottom: 12px; }
 
     a {
       color: var(--fg);
       text-decoration: underline;
+      cursor: pointer;
     }
 
     a:hover {
@@ -62,19 +62,12 @@
       opacity: 0.7;
       display: flex;
       justify-content: space-between;
-      align-items: center;
     }
 
     .theme-link {
       cursor: pointer;
       text-decoration: underline;
-      color: var(--fg);
       opacity: 1;
-    }
-
-    .theme-link:hover {
-      background: var(--fg);
-      color: var(--bg);
     }
   </style>
 </head>
@@ -82,9 +75,7 @@
 <body>
   <div class="box">
 
-    <div class="name">
-      Eniyan (Azorfus)
-    </div>
+    <div class="name">Eniyan (Azorfus)</div>
 
     <div class="section">
       low-level programmer. systems, reverse engineering, neural nets.
@@ -92,14 +83,14 @@
 
     <div class="section">
       projects:<br>
-      - <a href="#">Monte Carlo TS, DNN powered chess engine</a><br>
-      - <a href="#">Magical self transforming brainf*ck compiler</a><br>
-      - <a href="#">Thousand Islands (~1000 LOC operating system)</a>
+      - Monte Carlo TS, DNN powered chess engine<br>
+      - Magical self transforming brainf*ck compiler<br>
+      - Thousand Islands (~1000 LOC operating system)
     </div>
 
     <div class="section">
       writing:<br>
-      - <a href="#">Forgotten, Lost and Reminded. A short story</a>
+      - <a href="forgotten_lost_and_reminded.html" onclick="fadeOut(event)">Forgotten, Lost and Reminded. A short story</a>
     </div>
 
     <div class="section">
@@ -116,18 +107,27 @@
 
   <script>
     const body = document.body;
-    const themeLink = document.querySelector(".theme-link");
 
     if (localStorage.getItem("theme") === "dark") {
       body.classList.add("dark");
-      themeLink.textContent = "light theme.";
     }
+
+    window.onload = () => body.classList.add("loaded");
 
     function toggleTheme() {
       body.classList.toggle("dark");
-      const dark = body.classList.contains("dark");
-      localStorage.setItem("theme", dark ? "dark" : "light");
-      themeLink.textContent = dark ? "light theme." : "dark theme.";
+      localStorage.setItem(
+        "theme",
+        body.classList.contains("dark") ? "dark" : "light"
+      );
+    }
+
+    function fadeOut(e) {
+      e.preventDefault();
+      body.classList.remove("loaded");
+      setTimeout(() => {
+        window.location = e.target.href;
+      }, 250);
     }
   </script>
 </body>

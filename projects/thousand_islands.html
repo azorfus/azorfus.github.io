@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thousand Islands</title>
+
+  <!-- favicon 
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+  -->
+
+  <!-- APPLY THEME BEFORE PAINT -->
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f6f1e7;
+      --fg: #111;
+      --border: #111;
+    }
+
+    .dark {
+      --bg: #111;
+      --fg: #e6e1d7;
+      --border: #e6e1d7;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Courier New", Courier, monospace;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    body.loaded {
+      opacity: 1;
+    }
+
+    .box {
+      width: 480px;
+      padding: 24px 28px;
+      border: 1px solid var(--border);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .title {
+      font-weight: bold;
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+
+    .section {
+      margin-bottom: 12px;
+    }
+
+    a {
+      color: var(--fg);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    a:hover {
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    .footer {
+      margin-top: 16px;
+      font-size: 11px;
+      opacity: 0.7;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .theme-link {
+      cursor: pointer;
+      text-decoration: underline;
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+
+    <div class="title">Thousand Islands</div>
+
+    <div class="section">
+         An attempt at writing an Operating System from scratch within a 1000 lines of code  
+    </div>
+
+    <div class="section">
+       <a href="https://github.com/azorfus/Thousand-Islands">Github Repository</a>
+    </div>
+
+    <div class="footer">
+      <a href="../index.html" onclick="fadeOut(this.href)">[back]</a>
+      <span class="theme-link" onclick="toggleTheme()">dark theme.</span>
+    </div>
+
+  </div>
+
+  <script>
+    const body = document.body;
+    const root = document.documentElement;
+
+    window.onload = () => body.classList.add("loaded");
+
+    function toggleTheme() {
+      root.classList.toggle("dark");
+      localStorage.setItem(
+        "theme",
+        root.classList.contains("dark") ? "dark" : "light"
+      );
+    }
+
+    function fadeOut(href) {
+      body.classList.remove("loaded");
+      setTimeout(() => {
+        window.location.href = href;
+      }, 250);
+    }
+  </script>
+</body>
+</html>

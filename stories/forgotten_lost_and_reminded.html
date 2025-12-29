@@ -5,10 +5,11 @@
   <title>Forgotten, Lost and Reminded</title>
 
   <!-- APPLY THEME BEFORE PAINT -->
-  <div class="topbar">
-    <a href="../index.html" onclick="fadeOut(event)">[back]</a>
-    <a id="themeToggle" onclick="toggleTheme()">dark theme.</a>
-  </div>
+  <script>
+    const root = document.documentElement;
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") root.classList.add("dark");
+  </script>
 
   <style>
     :root {
@@ -82,6 +83,7 @@
 
 
 <body>
+  
 
   <div class="content">
     <h1><span style="font-weight: 400;">Forgotten, Lost and Reminded</span></h1>
@@ -107,38 +109,28 @@
 
 <script>
   const body = document.body;
-  const root = document.documentElement;
   const themeToggle = document.getElementById("themeToggle");
+  const root = document.documentElement;
 
-  // sync button label on load
-  if (root.classList.contains("dark")) {
-    themeToggle.textContent = "light theme.";
-  }
+  // Set button text correctly on page load
+  if (root.classList.contains("dark")) themeToggle.textContent = "light theme.";
 
   window.onload = () => body.classList.add("loaded");
 
-  function toggleTheme() {
-    // fade out
-    document.body.classList.remove("loaded");
+  themeToggle.onclick = () => {
+    body.classList.remove("loaded"); // fade out
 
     setTimeout(() => {
-      root.classList.toggle("dark");
-
-      const dark = root.classList.contains("dark");
+      const dark = root.classList.toggle("dark");
       localStorage.setItem("theme", dark ? "dark" : "light");
-
       themeToggle.textContent = dark ? "light theme." : "dark theme.";
-
-      // fade back in
-      document.body.classList.add("loaded");
+      body.classList.add("loaded"); // fade back in
     }, 120);
-  }
+  };
 
   function fadeOut(href) {
     body.classList.remove("loaded");
-    setTimeout(() => {
-      window.location.href = href;
-    }, 250);
+    setTimeout(() => { window.location.href = href; }, 250);
   }
 </script>
 

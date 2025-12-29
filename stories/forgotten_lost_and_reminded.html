@@ -6,22 +6,19 @@
 
   <!-- APPLY THEME BEFORE PAINT -->
   <script>
-    const root = document.documentElement;
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") root.classList.add("dark");
+    if (savedTheme === "dark") document.documentElement.classList.add("dark");
   </script>
 
   <style>
     :root {
       --bg: #f6f1e7;
       --fg: #111;
-      --border: #111;
     }
 
     html.dark {
       --bg: #111;
       --fg: #e6e1d7;
-      --border: #e6e1d7;
     }
 
     body {
@@ -30,15 +27,10 @@
       font-family: "Courier New", Courier, monospace;
       margin: 0;
       opacity: 0;
-      transition:
-        opacity 0.25s ease,
-        background-color 0.2s ease,
-        color 0.2s ease;
+      transition: opacity 0.25s ease, background 0.2s, color 0.2s;
     }
 
-    body.loaded {
-      opacity: 1;
-    }
+    body.loaded { opacity: 1; }
 
     .topbar {
       max-width: 720px;
@@ -57,17 +49,6 @@
       line-height: 1.7;
     }
 
-    h1 {
-      text-align: center;
-      font-size: 22px;
-      margin-bottom: 48px;
-      font-weight: bold;
-    }
-
-    p {
-      margin-bottom: 24px;
-    }
-
     a {
       color: var(--fg);
       text-decoration: underline;
@@ -81,12 +62,10 @@
   </style>
 </head>
 
-
 <body>
-    
   <div class="topbar">
     <a href="../index.html" onclick="fadeOut(this.href)">[back]</a>
-    <a id="themeToggle" onclick="toggleTheme()">dark theme.</a>
+    <a id="themeToggle">dark theme.</a>
   </div>
 
   <div class="content">
@@ -111,32 +90,32 @@
     <p style="text-align: center;">[Website under construction. The rest will be posted soon.]</p>
   </div>
 
-<script>
-  const body = document.body;
-  const themeToggle = document.getElementById("themeToggle");
-  const root = document.documentElement;
+  <script>
+    window.onload = () => {
+      const body = document.body;
+      const root = document.documentElement;
+      const themeToggle = document.getElementById("themeToggle");
 
-  // Set button text correctly on page load
-  if (root.classList.contains("dark")) themeToggle.textContent = "light theme.";
+      body.classList.add("loaded");
 
-  window.onload = () => body.classList.add("loaded");
+      // set button label correctly
+      if (root.classList.contains("dark")) themeToggle.textContent = "light theme.";
 
-  themeToggle.onclick = () => {
-    body.classList.remove("loaded"); // fade out
+      themeToggle.onclick = () => {
+        body.classList.remove("loaded");
+        setTimeout(() => {
+          const dark = root.classList.toggle("dark");
+          localStorage.setItem("theme", dark ? "dark" : "light");
+          themeToggle.textContent = dark ? "light theme." : "dark theme.";
+          body.classList.add("loaded");
+        }, 120);
+      };
 
-    setTimeout(() => {
-      const dark = root.classList.toggle("dark");
-      localStorage.setItem("theme", dark ? "dark" : "light");
-      themeToggle.textContent = dark ? "light theme." : "dark theme.";
-      body.classList.add("loaded"); // fade back in
-    }, 120);
-  };
-
-  function fadeOut(href) {
-    body.classList.remove("loaded");
-    setTimeout(() => { window.location.href = href; }, 250);
-  }
-</script>
-
+      window.fadeOut = (href) => {
+        body.classList.remove("loaded");
+        setTimeout(() => { window.location.href = href; }, 250);
+      };
+    };
+  </script>
 </body>
 </html>

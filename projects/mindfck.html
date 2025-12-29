@@ -11,11 +11,7 @@
   <!-- APPLY THEME BEFORE PAINT -->
   <script>
     const theme = localStorage.getItem("theme");
-
-    if (theme === "light") {
-      // explicitly light → do nothing
-    } else {
-      // dark or unset → dark
+    if (theme === "dark" || theme === null) {
       document.documentElement.classList.add("dark");
     }
   </script>
@@ -27,7 +23,7 @@
       --border: #111;
     }
 
-    .dark {
+    html.dark {
       --bg: #111;
       --fg: #e6e1d7;
       --border: #e6e1d7;
@@ -123,9 +119,14 @@
 
     function toggleTheme() {
       const root = document.documentElement;
-      const isDark = root.classList.toggle("dark");
 
-      localStorage.setItem("theme", isDark ? "dark" : "light");
+      if (root.classList.contains("dark")) {
+        root.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+      } else {
+        root.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+      }
     }
 
     function fadeOut(href) {

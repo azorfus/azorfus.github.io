@@ -7,11 +7,7 @@
   <!-- APPLY THEME BEFORE PAINT -->
   <script>
     const theme = localStorage.getItem("theme");
-
-    if (theme === "light") {
-      // explicitly light → do nothing
-    } else {
-      // dark or unset → dark
+    if (theme === "dark" || theme === null) {
       document.documentElement.classList.add("dark");
     }
   </script>

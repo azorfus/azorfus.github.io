@@ -126,19 +126,19 @@
   window.onload = () => body.classList.add("loaded");
 
   function toggleTheme() {
-    // fade out slightly
-    body.classList.remove("loaded");
+    // fade out
+    document.body.classList.remove("loaded");
 
     setTimeout(() => {
       root.classList.toggle("dark");
 
-      localStorage.setItem(
-        "theme",
-        root.classList.contains("dark") ? "dark" : "light"
-      );
+      const dark = root.classList.contains("dark");
+      localStorage.setItem("theme", dark ? "dark" : "light");
+
+      themeToggle.textContent = dark ? "light theme." : "dark theme.";
 
       // fade back in
-      body.classList.add("loaded");
+      document.body.classList.add("loaded");
     }, 120);
   }
 

@@ -5,11 +5,12 @@
   <title>Forgotten, Lost and Reminded</title>
 
   <!-- APPLY THEME BEFORE FIRST PAINT -->
-  <script>
-    if (localStorage.getItem("theme") === "dark") {
-      document.documentElement.classList.add("dark");
-    }
-  </script>
+<script>
+  const theme = localStorage.getItem("theme");
+  if (theme !== "light") {
+    document.documentElement.classList.add("dark");
+  }
+</script>
 
   <style>
     :root {

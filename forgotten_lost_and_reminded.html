@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forgotten, Lost and Reminded</title>
+
+  <style>
+    :root {
+      --bg: #f6f1e7;
+      --fg: #111;
+      --border: #111;
+    }
+
+    body.dark {
+      --bg: #111;
+      --fg: #e6e1d7;
+      --border: #e6e1d7;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Courier New", Courier, monospace;
+      margin: 0;
+      opacity: 0;
+      transition: opacity 0.25s ease, background 0.15s, color 0.15s;
+    }
+
+    body.loaded {
+      opacity: 1;
+    }
+
+    .topbar {
+      max-width: 720px;
+      margin: 24px auto 0;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+    }
+
+    .content {
+      max-width: 720px;
+      margin: 64px auto;
+      padding: 0 24px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 48px;
+      font-weight: bold;
+    }
+
+    p {
+      margin-bottom: 24px;
+    }
+
+    a {
+      color: var(--fg);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    a:hover {
+      background: var(--fg);
+      color: var(--bg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <a href="index.html" onclick="fadeOut(event)">[back]</a>
+    <a onclick="toggleTheme()">dark theme.</a>
+  </div>
+
+  <div class="content">
+<h1><span style="font-weight: 400;">Forgotten, Lost and Reminded</span></h1>
+<p><span style="font-weight: 400;">A short story written by Eniyan</span></p>
+<p><span style="font-weight: 400;">December 21, 2025</span></p>
+<p><em><span style="font-weight: 400;">Writer&rsquo;s note: This work of mine is rather heavily inspired by Johnathan Nolan&rsquo;s short story, Memento Mori. Although there is little to none conceptual or plot similarity, something heavily inspired me to write this after reading what I consider one of the best-written works I&rsquo;ve ever come across. Hence, you might notice some similarities in the writing style to that of John&rsquo;s work.</span></em></p>
+<p><span style="font-weight: 400;">YOU OPEN YOUR EYES TO THE WARM SUN ON YOUR FACE. There&rsquo;s a flock of crows screaming outside for whatever reason they usually do. &ldquo;The fuck?&rdquo; you voice with frustration. Another agonizing afternoon, another day where you wake up feeling like you got shot in the head. The rum ran out. What about the giant red bottle of vodka? You peek out to the side of your bed, that&rsquo;s where you usually put your huge bottle of Russian spirit, it&rsquo;s gone.&nbsp;</span></p>
+<p><span style="font-weight: 400;">&ldquo;For fuck&rsquo;s sake. God save my fucking soul,&rdquo; words shatter from your mouth with more frustration. The room is a mess. You look straight up at the ceiling, a dark brown ceiling fan spins slowly, and the room is cold. You didn&rsquo;t feel cold until now, your body was so busy recovering from the toxic party you gave it last night that it couldn&rsquo;t care to focus on how cold it was around you. The sheets are thrown across the floor. &ldquo;The hell happened here?&rdquo; you exclaim with confusion.&nbsp;</span></p>
+  </div>
+
+  <script>
+    const body = document.body;
+
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark");
+    }
+
+    window.onload = () => body.classList.add("loaded");
+
+    function toggleTheme() {
+      body.classList.toggle("dark");
+      localStorage.setItem(
+        "theme",
+        body.classList.contains("dark") ? "dark" : "light"
+      );
+    }
+
+    function fadeOut(e) {
+      e.preventDefault();
+      body.classList.remove("loaded");
+      setTimeout(() => {
+        window.location = e.target.href;
+      }, 250);
+    }
+  </script>
+</body>
+</html>

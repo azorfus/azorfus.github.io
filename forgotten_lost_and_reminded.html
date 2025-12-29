@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <title>Forgotten, Lost and Reminded</title>
 
+  <!-- APPLY THEME BEFORE FIRST PAINT -->
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
+
   <style>
     :root {
       --bg: #f6f1e7;
@@ -11,7 +18,7 @@
       --border: #111;
     }
 
-    body.dark {
+    .dark {
       --bg: #111;
       --fg: #e6e1d7;
       --border: #e6e1d7;
@@ -23,7 +30,7 @@
       font-family: "Courier New", Courier, monospace;
       margin: 0;
       opacity: 0;
-      transition: opacity 0.25s ease, background 0.15s, color 0.15s;
+      transition: opacity 0.25s ease;
     }
 
     body.loaded {
@@ -71,6 +78,7 @@
   </style>
 </head>
 
+
 <body>
   <div class="topbar">
     <a href="index.html" onclick="fadeOut(event)">[back]</a>
@@ -99,30 +107,27 @@
     <p style="text-align: center;">[Website under construction. The rest will be posted soon.]</p>
   </div>
 
-  <script>
-    const body = document.body;
+<script>
+  const body = document.body;
+  const root = document.documentElement;
 
-    if (localStorage.getItem("theme") === "dark") {
-      body.classList.add("dark");
-    }
+  window.onload = () => body.classList.add("loaded");
 
-    window.onload = () => body.classList.add("loaded");
+  function toggleTheme() {
+    root.classList.toggle("dark");
+    localStorage.setItem(
+      "theme",
+      root.classList.contains("dark") ? "dark" : "light"
+    );
+  }
 
-    function toggleTheme() {
-      body.classList.toggle("dark");
-      localStorage.setItem(
-        "theme",
-        body.classList.contains("dark") ? "dark" : "light"
-      );
-    }
-
-    function fadeOut(e) {
-      e.preventDefault();
-      body.classList.remove("loaded");
-      setTimeout(() => {
-        window.location = e.target.href;
-      }, 250);
-    }
-  </script>
+  function fadeOut(e) {
+    e.preventDefault();
+    body.classList.remove("loaded");
+    setTimeout(() => {
+      window.location.href = e.currentTarget.href;
+    }, 250);
+  }
+</script>
 </body>
 </html>

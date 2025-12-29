@@ -106,7 +106,7 @@
 
     <div class="footer">
       <a href="../index.html" onclick="fadeOut(this.href)">[back]</a>
-      <span class="theme-link" onclick="toggleTheme()">dark theme.</span>
+      <span id="themeToggle" class="theme-link" onclick="toggleTheme()">dark theme.</span>
     </div>
 
   </div>
@@ -115,19 +115,21 @@
     const body = document.body;
     const root = document.documentElement;
 
-    window.onload = () => body.classList.add("loaded");
+  // set correct label on load
+  if (root.classList.contains("dark")) {
+    themeToggle.textContent = "light theme.";
+  }
 
-    function toggleTheme() {
-      const root = document.documentElement;
+  window.onload = () => body.classList.add("loaded");
 
-      if (root.classList.contains("dark")) {
-        root.classList.remove("dark");
-        localStorage.setItem("theme", "light");
-      } else {
-        root.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-      }
-    }
+  function toggleTheme() {
+    root.classList.toggle("dark");
+
+    const dark = root.classList.contains("dark");
+    localStorage.setItem("theme", dark ? "dark" : "light");
+
+    themeToggle.textContent = dark ? "light theme." : "dark theme.";
+  }
 
     function fadeOut(href) {
       body.classList.remove("loaded");

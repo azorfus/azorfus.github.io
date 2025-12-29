@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <title>azorfus</title>
 
+  <!-- APPLY THEME BEFORE PAINT -->
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
+
   <style>
     :root {
       --bg: #f6f1e7;
@@ -11,7 +18,7 @@
       --border: #111;
     }
 
-    body.dark {
+    .dark {
       --bg: #111;
       --fg: #e6e1d7;
       --border: #e6e1d7;
@@ -27,7 +34,7 @@
       align-items: center;
       justify-content: center;
       opacity: 0;
-      transition: opacity 0.25s ease, background 0.15s, color 0.15s;
+      transition: opacity 0.25s ease;
     }
 
     body.loaded {
@@ -42,8 +49,14 @@
       line-height: 1.45;
     }
 
-    .name { font-weight: bold; margin-bottom: 12px; }
-    .section { margin-bottom: 12px; }
+    .name {
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .section {
+      margin-bottom: 12px;
+    }
 
     a {
       color: var(--fg);
@@ -90,7 +103,9 @@
 
     <div class="section">
       writing:<br>
-      - <a href="forgotten_lost_and_reminded.html" onclick="fadeOut(event)">Forgotten, Lost and Reminded. A short story</a>
+      - <a href="forgotten_lost_and_reminded.html" onclick="fadeOut(event)">
+          Forgotten, Lost and Reminded. A short story
+        </a>
     </div>
 
     <div class="section">
@@ -107,18 +122,15 @@
 
   <script>
     const body = document.body;
-
-    if (localStorage.getItem("theme") === "dark") {
-      body.classList.add("dark");
-    }
+    const root = document.documentElement;
 
     window.onload = () => body.classList.add("loaded");
 
     function toggleTheme() {
-      body.classList.toggle("dark");
+      root.classList.toggle("dark");
       localStorage.setItem(
         "theme",
-        body.classList.contains("dark") ? "dark" : "light"
+        root.classList.contains("dark") ? "dark" : "light"
       );
     }
 
@@ -126,7 +138,7 @@
       e.preventDefault();
       body.classList.remove("loaded");
       setTimeout(() => {
-        window.location = e.target.href;
+        window.location.href = e.currentTarget.href;
       }, 250);
     }
   </script>

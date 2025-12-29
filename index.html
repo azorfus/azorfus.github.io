@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>azorfus</title>
 
+  <!-- favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
   <!-- APPLY THEME BEFORE PAINT -->
   <script>
     if (localStorage.getItem("theme") === "dark") {
@@ -49,14 +52,8 @@
       line-height: 1.45;
     }
 
-    .name {
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
-
-    .section {
-      margin-bottom: 12px;
-    }
+    .name { font-weight: bold; margin-bottom: 12px; }
+    .section { margin-bottom: 12px; }
 
     a {
       color: var(--fg);
@@ -103,9 +100,7 @@
 
     <div class="section">
       writing:<br>
-      - <a href="forgotten_lost_and_reminded.html" onclick="fadeOut(event)">
-          Forgotten, Lost and Reminded. A short story
-        </a>
+      - <a href="forgotten_lost_and_reminded.html" onclick="fadeOut(this.href)">Forgotten, Lost and Reminded. A short story</a>
     </div>
 
     <div class="section">
@@ -134,11 +129,10 @@
       );
     }
 
-    function fadeOut(e) {
-      e.preventDefault();
+    function fadeOut(href) {
       body.classList.remove("loaded");
       setTimeout(() => {
-        window.location.href = e.currentTarget.href;
+        window.location.href = href;
       }, 250);
     }
   </script>

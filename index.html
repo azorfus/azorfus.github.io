@@ -39,7 +39,10 @@
       align-items: center;
       justify-content: center;
       opacity: 0;
-      transition: opacity 0.25s ease;
+      transition:
+        opacity 0.25s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
     }
 
     body.loaded {
@@ -135,12 +138,20 @@
   window.onload = () => body.classList.add("loaded");
 
   function toggleTheme() {
-    root.classList.toggle("dark");
+    // fade out slightly
+    body.classList.remove("loaded");
 
-    const dark = root.classList.contains("dark");
-    localStorage.setItem("theme", dark ? "dark" : "light");
+    setTimeout(() => {
+      root.classList.toggle("dark");
 
-    themeToggle.textContent = dark ? "light theme." : "dark theme.";
+      localStorage.setItem(
+        "theme",
+        root.classList.contains("dark") ? "dark" : "light"
+      );
+
+      // fade back in
+      body.classList.add("loaded");
+    }, 120);
   }
 
     function fadeOut(href) {

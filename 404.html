@@ -4,65 +4,90 @@
   <meta charset="UTF-8">
   <title>404</title>
 
+  <!-- APPLY THEME BEFORE PAINT -->
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
+
   <style>
+    :root {
+      --bg: #f6f1e7;
+      --fg: #111;
+      --border: #111;
+    }
+
+    .dark {
+      --bg: #111;
+      --fg: #e6e1d7;
+      --border: #e6e1d7;
+    }
+
     body {
-      background: #f6f1e7;
-      color: #111;
+      background: var(--bg);
+      color: var(--fg);
       font-family: "Courier New", Courier, monospace;
       height: 100vh;
       margin: 0;
       display: flex;
       align-items: center;
       justify-content: center;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    body.loaded {
+      opacity: 1;
     }
 
     .box {
-      width: 320px;
+      width: 420px;
       padding: 24px 28px;
-      border: 1px solid #111;
+      border: 1px solid var(--border);
       font-size: 13px;
       line-height: 1.45;
+      text-align: center;
     }
 
-    .title {
+    .code {
       font-weight: bold;
       margin-bottom: 12px;
     }
 
     a {
-      color: #000;
+      color: var(--fg);
       text-decoration: underline;
+      cursor: pointer;
     }
 
     a:hover {
-      background: #000;
-      color: #f6f1e7;
-    }
-
-    .footer {
-      margin-top: 16px;
-      font-size: 11px;
-      opacity: 0.7;
+      background: var(--fg);
+      color: var(--bg);
     }
   </style>
 </head>
 
 <body>
   <div class="box">
-
-    <div class="title">
-      404
-    </div>
-
+    <div class="code">404</div>
     <div>
-      this page does not exist.<br>
-      the link is wrong or the page was removed.
+      the page you are looking for does not exist.<br><br>
+      <a href="index.html" onclick="fadeOut(this.href)">return home</a>
     </div>
-
-    <div class="footer">
-      <a href="/">go back</a>
-    </div>
-
   </div>
+
+  <script>
+    const body = document.body;
+
+    window.onload = () => body.classList.add("loaded");
+
+    function fadeOut(href) {
+      body.classList.remove("loaded");
+      setTimeout(() => {
+        window.location.href = href;
+      }, 250);
+    }
+  </script>
 </body>
 </html>

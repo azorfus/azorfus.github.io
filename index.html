@@ -5,21 +5,34 @@
   <title>azorfus</title>
 
   <style>
+    :root {
+      --bg: #f6f1e7;
+      --fg: #111;
+      --border: #111;
+    }
+
+    body.dark {
+      --bg: #111;
+      --fg: #e6e1d7;
+      --border: #e6e1d7;
+    }
+
     body {
-      background: #f6f1e7;
-      color: #111;
+      background: var(--bg);
+      color: var(--fg);
       font-family: "Courier New", Courier, monospace;
       height: 100vh;
       margin: 0;
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: background 0.15s, color 0.15s;
     }
 
     .box {
       width: 480px;
       padding: 24px 28px;
-      border: 1px solid #111;
+      border: 1px solid var(--border);
       font-size: 13px;
       line-height: 1.45;
     }
@@ -34,19 +47,34 @@
     }
 
     a {
-      color: #000;
+      color: var(--fg);
       text-decoration: underline;
     }
 
     a:hover {
-      background: #000;
-      color: #f6f1e7;
+      background: var(--fg);
+      color: var(--bg);
     }
 
     .footer {
       margin-top: 16px;
       font-size: 11px;
       opacity: 0.7;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .theme-link {
+      cursor: pointer;
+      text-decoration: underline;
+      color: var(--fg);
+      opacity: 1;
+    }
+
+    .theme-link:hover {
+      background: var(--fg);
+      color: var(--bg);
     }
   </style>
 </head>
@@ -80,9 +108,27 @@
     </div>
 
     <div class="footer">
-      last updated Dec 2025
+      <span>last updated Dec 2025</span>
+      <span class="theme-link" onclick="toggleTheme()">dark theme.</span>
     </div>
 
   </div>
+
+  <script>
+    const body = document.body;
+    const themeLink = document.querySelector(".theme-link");
+
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark");
+      themeLink.textContent = "light theme.";
+    }
+
+    function toggleTheme() {
+      body.classList.toggle("dark");
+      const dark = body.classList.contains("dark");
+      localStorage.setItem("theme", dark ? "dark" : "light");
+      themeLink.textContent = dark ? "light theme." : "dark theme.";
+    }
+  </script>
 </body>
 </html>

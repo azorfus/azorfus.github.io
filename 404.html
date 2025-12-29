@@ -6,7 +6,8 @@
 
   <!-- APPLY THEME BEFORE PAINT -->
   <script>
-    if (localStorage.getItem("theme") === "dark") {
+    const theme = localStorage.getItem("theme");
+    if (theme !== "light") {
       document.documentElement.classList.add("dark");
     }
   </script>
@@ -15,7 +16,7 @@
     :root {
       --bg: #f6f1e7;
       --fg: #111;
-      --border: #111;
+      --border: #b0a8a8;
     }
 
     .dark {

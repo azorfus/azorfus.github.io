@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <title>Forgotten, Lost and Reminded</title>
 
-  <!-- APPLY THEME BEFORE FIRST PAINT -->
-<script>
-  const theme = localStorage.getItem("theme");
-  if (theme !== "light") {
-    document.documentElement.classList.add("dark");
-  }
-</script>
+  <!-- APPLY THEME BEFORE PAINT -->
+  <script>
+    const theme = localStorage.getItem("theme");
+    if (theme !== "light") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
 
   <style>
     :root {

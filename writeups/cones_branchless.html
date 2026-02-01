@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Branchless Branching - crackmes.one</title>
+
+  <!-- APPLY THEME BEFORE PAINT -->
+  <script>
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") document.documentElement.classList.add("dark");
+  </script>
+
+  <style>
+    :root {
+      --bg: #f6f1e7;
+      --fg: #111;
+    }
+
+    html.dark {
+      --bg: #111;
+      --fg: #e6e1d7;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Courier New", Courier, monospace;
+      margin: 0;
+      opacity: 0;
+      transition: opacity 0.25s ease, background 0.2s, color 0.2s;
+    }
+
+    body.loaded { opacity: 1; }
+
+    .topbar {
+      max-width: 720px;
+      margin: 24px auto 0;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+    }
+
+    .content {
+      max-width: 720px;
+      margin: 64px auto;
+      padding: 0 24px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--fg);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    a:hover {
+      background: var(--fg);
+      color: var(--bg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <a href="../index.html" onclick="fadeOut(this.href)">[back]</a>
+    <a id="themeToggle">dark theme.</a>
+  </div>
+  
+  <div class="content">
+      <p>
+        Link to the challenge:
+        <a href="https://crackmes.one/crackme/68692679aadb6eeafb398fdf">click here</a>
+      </p>
+      
+      <p>
+        The binary is extremely small. Running the <code>size</code> command shows that the
+        <code>.text</code> section is only 446 bytes and the <code>.data</code> section is 117 bytes.
+      </p>
+      
+      <pre><code>$ size ./branchless
+         text    data     bss     dec     hex  filename
+          446     117      48     611     263  branchless
+      </code></pre>
+
+  
+  </div>
+
+  <script>
+    window.onload = () => {
+      const body = document.body;
+      const root = document.documentElement;
+      const themeToggle = document.getElementById("themeToggle");
+
+      body.classList.add("loaded");
+
+      // set button label correctly
+      if (root.classList.contains("dark")) themeToggle.textContent = "light theme.";
+
+      themeToggle.onclick = () => {
+        body.classList.remove("loaded");
+        setTimeout(() => {
+          const dark = root.classList.toggle("dark");
+          localStorage.setItem("theme", dark ? "dark" : "light");
+          themeToggle.textContent = dark ? "light theme." : "dark theme.";
+          body.classList.add("loaded");
+        }, 120);
+      };
+
+      window.fadeOut = (href) => {
+        body.classList.remove("loaded");
+        setTimeout(() => { window.location.href = href; }, 250);
+      };
+    };
+  </script>
+</body>
+</html>

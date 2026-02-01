@@ -70,22 +70,100 @@
   </div>
   
   <div class="content">
-
-    <h2 id="branchless-branching-crackmes-one">Branchless Branching – crackmes.one</h2>
-  
+    <h2>Branchless Branching - crackmes.one</h2>
+    
     <p>
       Link to the challenge:
       <a href="https://crackmes.one/crackme/68692679aadb6eeafb398fdf">click here</a>
     </p>
     
     <p>
-      The binary is extremely small. Running the <code>size</code> command shows that the
-      <code>.text</code> section is only 446 bytes and the <code>.data</code> section is 117 bytes.
+      The binary is very small. Running the <code>size</code> command on the binary shows us that
+      the <code>.text</code> section is a mere 446 bytes and the <code>.data</code> section is just 117 bytes.
     </p>
     
     <pre><code>$ size ./branchless
        text    data     bss     dec     hex  filename
         446     117      48     611     263  branchless
+    </code></pre>
+    
+    <p>Here's the first segment of disassembly of the binary.</p>
+    
+    <pre><code class="language-asm">
+    401000:  mov    eax,0x1
+    401005:  mov    edi,0x1
+    40100a:  movabs rsi,0x402000
+    401014:  mov    edx,0xa
+    401019:  syscall        &lt;--- sys_write to stdout "username: password: ..."&gt;
+    40101b:  mov    eax,0x0
+    401020:  mov    edi,0x0
+    401025:  movabs rsi,0x402078
+    40102f:  mov    edx,0x8
+    401034:  syscall        &lt;--- sys_read from stdin, to read username&gt;
+    401036:  mov    eax,0x1
+    40103b:  mov    edi,0x1
+    401040:  movabs rsi,0x40200a
+    40104a:  mov    edx,0xa
+    40104f:  syscall        &lt;--- sys_write asking for password&gt;
+    401051:  mov    eax,0x0
+    401056:  mov    edi,0x0
+    40105b:  movabs rsi,0x402080
+    401065:  mov    edx,0x11
+    40106a:  syscall        &lt;--- sys_read to get password input&gt;
+    </code></pre>
+    
+    <p>
+      The username is stored at <strong>0x402078</strong> and the password at
+      <strong>0x402080</strong>.
+    </p>
+    
+    <p>Following that we have some form of a function initialization:</p>
+    
+    <pre><code class="language-asm">
+    40106c:  push   rbp
+    40106d:  mov    rbp,rsp
+    401070:  sub    rsp,0x20
+    401074:  mov    QWORD PTR [rbp-0x8],0x4010e8
+    40107c:  mov    QWORD PTR [rbp-0x10],0x40109e
+    401084:  mov    QWORD PTR [rbp-0x18],0x401000
+    40108c:  xor    rax,rax
+    40108f:  xor    rbx,rbx
+    401092:  xor    rcx,rcx
+    401095:  xor    rdx,rdx
+    </code></pre>
+    
+    <p>
+      A stack frame is created. Registers are being cleared.
+      We have the start of <strong>.text</strong> initialized to <strong>rbp - 0x18</strong>.
+      Two more instruction addresses are stored at
+      <strong>rbp - 0x10 = 0x40109e</strong> and at
+      <strong>rbp - 0x8 = 0x4010e8</strong>.
+    </p>
+    
+    <p>
+      The following seems to be the code that does the jumping calculations.
+      Here's where the branching is done.
+    </p>
+    
+    <pre><code class="language-asm">
+    401098:  mov    r10d,0x8
+    40109e:  mov    rax,rdx
+    4010a1:  imul   rax,rax,0x7
+    4010a5:  mov    bl,BYTE PTR [rdx+0x402078]
+    4010ab:  add    rax,rbx
+    4010ae:  and    rax,0x1f
+    4010b2:  mov    cl,BYTE PTR [rax+0x402055]
+    4010b8:  mov    BYTE PTR [rdx+0x402091],cl
+    4010be:  imul   rbx,rcx
+    4010c2:  and    rbx,0x1f
+    4010c6:  mov    cl,BYTE PTR [rbx+0x402055]
+    4010cc:  mov    BYTE PTR [r10+0x402091],cl
+    4010d3:  inc    rdx
+    4010d6:  inc    r10
+    4010d9:  cmp    rdx,0x8
+    4010dd:  mov    rax,QWORD PTR [rbp-0x10]
+    4010e1:  cmove  rax,QWORD PTR [rbp-0x8]
+    4010e6:  jmp    rax
     </code></pre>
 
   </div>

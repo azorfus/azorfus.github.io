@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Epoch</title>
+
+  <!-- favicon 
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+  -->
+
+  <!-- APPLY THEME BEFORE PAINT -->
+  <script>
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark" || theme === null) {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f6f1e7;
+      --fg: #111;
+      --border: #111;
+    }
+
+    html.dark {
+      --bg: #111;
+      --fg: #e6e1d7;
+      --border: #e6e1d7;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Courier New", Courier, monospace;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition:
+        opacity 0.25s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+    }
+
+    body.loaded {
+      opacity: 1;
+    }
+
+    .box {
+      width: min(480px, 92vw);
+      padding: 24px 28px;
+      border: 1px solid var(--border);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .title {
+      font-weight: bold;
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+
+    .section {
+      margin-bottom: 12px;
+    }
+
+    a {
+      color: var(--fg);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    a:hover {
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    .footer {
+      margin-top: 16px;
+      font-size: 11px;
+      opacity: 0.7;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .theme-link {
+      cursor: pointer;
+      text-decoration: underline;
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+
+    <div class="title">Epoch</div>
+
+    <div class="section">
+         A single header machine learning framework build in C.
+         Features custom arenas, tensors and autodiff functionalities
+    </div>
+
+    <div class="section">
+       <a href="https://github.com/azorfus/tessa">Github Repository</a>
+    </div>
+
+    <div class="footer">
+      <a href="../index.html" onclick="fadeOut(this.href)">[back]</a>
+      <span id="themeToggle" class="theme-link" onclick="toggleTheme()">dark theme.</span>
+    </div>
+
+  </div>
+
+  <script>
+    const body = document.body;
+    const root = document.documentElement;
+
+  // set correct label on load
+  if (root.classList.contains("dark")) {
+    themeToggle.textContent = "light theme.";
+  }
+
+  window.onload = () => body.classList.add("loaded");
+
+  function toggleTheme() {
+    // fade out
+    document.body.classList.remove("loaded");
+
+    setTimeout(() => {
+      root.classList.toggle("dark");
+
+      const dark = root.classList.contains("dark");
+      localStorage.setItem("theme", dark ? "dark" : "light");
+
+      themeToggle.textContent = dark ? "light theme." : "dark theme.";
+
+      // fade back in
+      document.body.classList.add("loaded");
+    }, 120);
+  }
+
+    function fadeOut(href) {
+      body.classList.remove("loaded");
+      setTimeout(() => {
+        window.location.href = href;
+      }, 250);
+    }
+  </script>
+</body>
+</html>

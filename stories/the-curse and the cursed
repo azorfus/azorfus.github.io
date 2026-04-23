@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The curse and the cursed</title>
+
+  <!-- APPLY THEME BEFORE PAINT -->
+  <script>
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") document.documentElement.classList.add("dark");
+  </script>
+
+  <style>
+    :root {
+      --bg: #f6f1e7;
+      --fg: #111;
+    }
+
+    html.dark {
+      --bg: #111;
+      --fg: #e6e1d7;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Courier New", Courier, monospace;
+      margin: 0;
+      opacity: 0;
+      transition: opacity 0.25s ease, background 0.2s, color 0.2s;
+    }
+
+    body.loaded { opacity: 1; }
+
+    .topbar {
+      max-width: 720px;
+      margin: 24px auto 0;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+    }
+
+    .content {
+      max-width: 720px;
+      margin: 64px auto;
+      padding: 0 24px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--fg);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    a:hover {
+      background: var(--fg);
+      color: var(--bg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <a href="../index.html" onclick="fadeOut(this.href)">[back]</a>
+    <a id="themeToggle">dark theme.</a>
+  </div>
+
+  <div class="content">
+    <h1><span style="font-weight: 400;">The curse and the cursed</span></h1>
+    <p><span style="font-weight: 400;">A short story written by Eniyan</span></p>
+    <p><span style="font-weight: 400;">April 02, 2026</span></p>
+    <p><span style="font-weight: 400;">It&rsquo;s cold. You wake up to the moonlight, and the cabin rattles as the train plunges through the deep, dark jungle. The shadows of the trees flash disco over your bed. You get up and leave the cabin, door unlocked; it&rsquo;s quiet. Almost as if no one is on the train except you. You walk up to the door of the car, it&rsquo;s open, and the wind gushes into the train and slams you in the face. It&rsquo;s refreshing once you get used to the aggression. The train clears out from the jungle, slowly thinning out to vast plains, farm lands as far as the eye can see. In the far distance, you can see tiny lights flickering.&nbsp;</span></p>
+    <p><span style="font-weight: 400;">&ldquo;Roads. Hmm, it must be a small village,&rdquo; you think to yourself. You feel a cold presence around your shoulder; you&rsquo;ve been feeling it ever since you got on the train. Bustling with people when you got in, now the crowd has slowly withered out as the train crossed the main cities and towns. The train runs all across the country, a special railroad constructed for express travel across the isola. Stations have their own special label systems, from the starting station AN - 01 to the last of them, JN - 12. A total of 120 stations. All the main cities and towns mostly end at around EN and FN.&nbsp;</span></p>
+    <p><span style="font-weight: 400;">You are interrupted by distant noises; it seems people are shouting to the far north of the train. You move towards the noise, the train clears into far lands with no seeming civilization around. It&rsquo;s almost like an endless desert of plains. The noises get louder as you move from car to car, slowly. You check your holster for your gun, a standard issue with the job you hold. You notice it missing, who leaves their handgun unattended in a public train? You sigh, and you proceed to walk forward anyway. The lounge inside the train is as empty as every other car; the mini cafeteria is closed. The noises seem to be getting louder; you can almost make sense of the distant chaos. The cold presence around your shoulder reappears, and someone puts their hand on you, startling you. You turn around quickly, surprised to find that you weren&rsquo;t alone, although you hadn&rsquo;t seen anyone else.&nbsp;</span></p>
+    <p><span style="font-weight: 400;">A man in a grey woolen suit, fairly tall, hair oiled and slicked back, stands before you with an unnatural smile on his face; you can almost see his teeth. &ldquo;Ah! It&rsquo;s finally nice to see someone after such a lonely trip. I&rsquo;m sorry for startling you, Monsieur!&rdquo; he chuckles as he lets out a sigh of relief. &ldquo;I&rsquo;m to get off at GN - 08, back home after a long business trip! Can&rsquo;t wait to see the kids!&rdquo; he laughs. &ldquo;What about you, Monsieur?&rdquo; he goes on speaking; there is no break for you to interrupt. &ldquo;Your appearance screams government, I&rsquo;m right, aren&rsquo;t I? Are you a police officer?&rdquo; He seems pleased with his deduction.&nbsp;</span></p>
+    <p><span style="font-weight: 400;">&ldquo;Something of the sort, sir, yes,&rdquo; you reply with a modest smile. &ldquo;Ah, again, sorry for startling you,&rdquo; he mutters. BANG, a loud noise breaks out from the far north of the train. There&rsquo;s a large flash; it&rsquo;s probably an explosion. You turn back to the man, to your surprise; he is nowhere to be seen. The chaotic noise of the crowd grows louder as you walk forward. You finally see light at the end of your path. It&rsquo;s a closed car, there's a curtain on the window of the door, and a mild cream light leaks through the opening. You twist open the doorknob, entering a room cold with air conditioning, and it smells of pastry and fresh pasta. The car is bustling with men in fancy suits and women in glistening dresses, waiters in their tuxedos run around with glasses of wine and champagne.&nbsp;</span></p>
+    <p><span style="font-weight: 400;">You walk further into the crowd, and a man notices you, a tall figure with clean-cut hair and a stunning mustache. &ldquo;KNOCK KNOCK KNOCK,&rdquo; he laughs. &ldquo;Excuse me?&rdquo; you respond, confused. He goes again &ldquo;KNOCK KNOCK KNOCK&rdquo; with a charming laugh. &ldquo;MR. RAMSEY, *KNOCK KNOCK KNOCK* ARE YOU ALRIGHT?&rdquo; The car shakes vigorously. You wake up with a zap to your head and a strong migraine. The cabin door is being knocked, a man on the other side has been trying to get to you, &ldquo;I&rsquo;m good!&rdquo; you shout back.&nbsp;</span></p>
+    <p><span style="font-weight: 400;">&ldquo;Thank God, Mr. Ramsey, can you please open the door, sir?&rdquo; You </span><span style="font-weight: 400;">can hear the relief in his voice. You get up and unlock the cabin door. It&rsquo;s the same man, oiled hair slicked back, grey woolen suit, and the same unnatural smile. &ldquo;Would you like some coffee? We were worried about you, sir; you haven&rsquo;t been responding for the past four hours,&rdquo; he mutters.&nbsp;</span></p>
+    <p><span style="font-weight: 400;">&ldquo;Do I know you?&rdquo; you ask, &ldquo;Of course, Mr. Ramsey! Are you alright? Take a look at the coffee, sir, you&rsquo;d understand,&rdquo; he voices with fragility. You peek into the coffee with confusion; the dark liquid, thick like tar, holds your gaze. The vast cosmos seen within whatever this cup holds, you see an endless realm of consciousness, floating amongst the stars and the rocks. You float free and light, you lift your hands, to feel the reality of the moment, to see if you exist. A watch, YOUR watch glimmers in the light of the stars, a mechanical movement, a craft so majestic it holds time hostage. A gift from that one person, the one person you love, the one soul that had yours in its grip, you snap, you remember, you know who gave it to you, it sends a shiver down your spine, your eyes go blurry, you look up and see a light approaching you, a sound that grows louder as it closes in, a train horn, it comes straight at you, with astounding speed. The light blinds you.&nbsp;</span></p>
+    <p>&nbsp;</p>
+    <p><em><span style="font-weight: 400;">&ldquo;Is this the end?&rdquo;</span></em></p>
+    <p>&nbsp;</p>
+    <p><span style="font-weight: 400;">You open your eyes. &ldquo;Welcome to Shibuya Station! At the 6th stop of station &lsquo;AN&rsquo; of the intercontinental railway system, the train will leave the platform in 20 minutes!&rdquo; The announcement ends with a comforting ring. A half-empty coffee cup sits cold in your hand, and you have a strong ache in your head. You board the train. Your ticket reads &ldquo;M - B - 03&rdquo; car M, side B, cabin 03. You are currently in car G. You move south of the train, past a mini cafeteria and a lounge. Maybe it&rsquo;d be nice to come by and have a meal at night. The journey is almost 32 hours long, and a pleasant meal or two should keep you going well.</span></p>
+    <p><span style="font-weight: 400;">The train inspector walks up to you, a man of fair height, oiled and slicked back hair, and a fine grey woolen suit, he has an unnatural smile; his face seems familiar for some reason. &ldquo;May I see your ticket, Monsieur?&rdquo; he asks. You hand him the ticket, and he runs it against his list.</span></p>
+    <p><span style="font-weight: 400;">You can see his eyes wavering quickly over the sheets. &ldquo;Ah! Mr. Ramsey! We are pleased to have you on board! I hope your journey is pleasant. Please reach out to the train crew or to me for anything you might need!&nbsp;</span></p>
+    <p><span style="font-weight: 400;">His distinct French accent is hard to let go unnoticed, maybe a man from the Marais Isola? The land of art and literature, maybe you should visit sometime, get a taste of a world that&rsquo;s not so bland as yours. You continue to walk towards your cabin. You enter car &ldquo;M&rdquo;, the yellow strip lights that run across the wall calm your nerves, and there is your cabin, a dark wooden door with a brass handle. You creak open the door. White - creme linen sheets line the bed, the grey curtains running across the windows, and the wooden walls provide a comforting sense of luxury. You shove your case in the corner and lie tired on your bed. It&rsquo;s almost evening, you stretch out, your muscles tight, they slowly relax, and there&rsquo;s a strong ache running all throughout your body; it's painful yet comforting. You slowly pass out into the comforting oblivion.&nbsp;</span></p>
+    <p><span style="font-weight: 400;">It&rsquo;s cold. You wake up to the moonlight, and the cabin rattles as the train plunges through the deep, dark jungle. The shadows of the trees flash disco over your bed. You get up and leave the cabin, door unlocked; it&rsquo;s loud. Almost half the train is still full with passengers waiting to go home for the winter. You can hear a baby crying, kids running around fighting, and their moms trying to calm them down. You smell bread and coffee. You walk up to the door of the car, it&rsquo;s open, and the wind gushes into the train and slams you in the face. It&rsquo;s refreshing once you get used to the aggression. The train clears out from the jungle, slowly thinning out to vast plains, farm lands as far as the eye can see. In the far distance, you can see tiny lights flickering.&nbsp;</span></p>
+    <p><span style="font-weight: 400;">A man interrupts your quiet gazing, &ldquo;Monsieur? You must be Hugh Ramsey, correct?&rdquo; he is almost certain that you are, but there&rsquo;s still doubt in his tone. &ldquo;Yes, that is me,&rdquo; you respond. &ldquo;Ah!, </span><em><span style="font-weight: 400;">M'sieur</span></em><span style="font-weight: 400;"> Ramsey, you are past the dinner time of the train&rsquo;s schedule, but we do have a cafeteria two cars north. The food is complimentary since you missed the scheduled dinner. Hope you have a pleasant night,&rdquo; he turns around and leaves almost immediately with a gentle smile on his face.&nbsp;</span></p>
+    <p><span style="font-weight: 400;">You walk up to the cafeteria and you fetch yourself a croissant, a banana butter croissant, a famous delicacy of the Marais isola. You can smell the butter as you bring the pastry closer to your mouth. With a bite, the soft croissant melts down and crackles under your teeth. You grab yourself a cup of hot black coffee to wash down the buttery flavor in your mouth. The cold night and the warm pastry with the hot coffee makes you feel at home. You take a seat and take another sip of the coffee, the warmth consumes you, you close your eyes as if you&rsquo;re falling asleep in a dream. Eyelids as heavy as an anchor at the sea.&nbsp;</span></p>
+    <p><span style="font-weight: 400;">You wake up in the cafeteria with the taste of tobacco in your mouth, it seems like you passed out on the chair under the cold breeze from the window. The train is parked at a substation, and an announcement goes off &ldquo;Welcome to Shibuya Station! At the 6th stop of station &lsquo;AN&rsquo; of the intercontinental railway system, the train will leave the platform in 20 minutes!&rdquo; The announcement ends with a comforting ring. A half-empty coffee cup sits cold on the table, and you have a strong ache in your head.&nbsp;</span></p>
+    <p><span style="font-weight: 400;">You get up and grab yourself another cup of fresh hot coffee, just what you need to ignite your brain back to function.&nbsp;</span></p>
+  </div>
+
+  <script>
+    window.onload = () => {
+      const body = document.body;
+      const root = document.documentElement;
+      const themeToggle = document.getElementById("themeToggle");
+
+      body.classList.add("loaded");
+
+      // set button label correctly
+      if (root.classList.contains("dark")) themeToggle.textContent = "light theme.";
+
+      themeToggle.onclick = () => {
+        body.classList.remove("loaded");
+        setTimeout(() => {
+          const dark = root.classList.toggle("dark");
+          localStorage.setItem("theme", dark ? "dark" : "light");
+          themeToggle.textContent = dark ? "light theme." : "dark theme.";
+          body.classList.add("loaded");
+        }, 120);
+      };
+
+      window.fadeOut = (href) => {
+        body.classList.remove("loaded");
+        setTimeout(() => { window.location.href = href; }, 250);
+      };
+    };
+  </script>
+</body>
+</html>

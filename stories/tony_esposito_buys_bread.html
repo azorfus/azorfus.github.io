@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tony Esposito buys bread</title>
+
+  <!-- APPLY THEME BEFORE PAINT -->
+  <script>
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") document.documentElement.classList.add("dark");
+  </script>
+
+  <style>
+    :root {
+      --bg: #f6f1e7;
+      --fg: #111;
+    }
+
+    html.dark {
+      --bg: #111;
+      --fg: #e6e1d7;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Courier New", Courier, monospace;
+      margin: 0;
+      opacity: 0;
+      transition: opacity 0.25s ease, background 0.2s, color 0.2s;
+    }
+
+    body.loaded { opacity: 1; }
+
+    .topbar {
+      max-width: 720px;
+      margin: 24px auto 0;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+    }
+
+    .content {
+      max-width: 720px;
+      margin: 64px auto;
+      padding: 0 24px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--fg);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    a:hover {
+      background: var(--fg);
+      color: var(--bg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <a href="../index.html" onclick="fadeOut(this.href)">[back]</a>
+    <a id="themeToggle">dark theme.</a>
+  </div>
+
+  <div class="content">
+  <h1><span style="font-weight: 400;">Tony Esposito buys bread</span></h1>
+  <p><span style="font-weight: 400;">A tiny short story by Eniyan</span></p>
+  <p><span style="font-weight: 400;">May 2nd, 2026</span></p>
+  <p>&nbsp;</p>
+  <p><em><span style="font-weight: 400;">Author&rsquo;s Note: I wrote this as a writing exercise, there is no plot whatsoever, the idea was to keep it within 1000 - 1500 words.</span></em></p>
+  <p>&nbsp;</p>
+  <p><span style="font-weight: 400;">It&rsquo;s late afternoon, Tony is a man in his late thirties who has alleged connections to the Italian mafia, probably a high ranking individual, but we don&rsquo;t know for sure. He has a loving wife and two kids. It's a beautiful summer in New York, it&rsquo;s so hot and bright that wearing sunglasses doesn&rsquo;t help with the blinding of the sun. Tony is on his way to fetch bread and prosciutto for his family. He decides to walk, to get some movement in his body as his doctor advises him to get some physical exercise. Unfortunately, Tony is a man of anger, he runs into the boy who cheated on his daughter, grabs him by his collar and slams him into the brick wall beside them &ldquo;FIGLIO DI PUTTANA, piece of fucking shit&rdquo; he punches his face until the boy faints, Tony feels relief, the boy slides down the wall, must be in his early twenties, a crowd gathers around them, but they all know Tony, he regulates the milk for the surrounding blocks, an indirect job under Capone, heard of him? A familiar face emerges from the crowd, it&rsquo;s Tony Russo. Note! Our Tony is an Esposito, an orphan, raised by a baker that had low ranking jobs under the previous father of the mafia, Papa Johnny they called him. A strategic mastermind, Capone&rsquo;s mentor. Tony ran errand jobs for the old baker, delivering orders across the south of papa&rsquo;s region. He would often deliver to the ranks of the mafia, staying with them and learning the ways of life they showered upon him. His hot headed but smart personality gained him some liking from the people among the ranks, would never let him high up since a man with anger issues is not good for business, but they liked him nevertheless.&nbsp;</span></p>
+  <p><span style="font-weight: 400;">He spits at the unconscious ragazzo and continues on his walk while Russo runs along and tries talking some sense into him, &ldquo;You can&rsquo;t just go around hitting people in broad daylight for no reason Tony!&rdquo;&nbsp;</span></p>
+  <p><span style="font-weight: 400;">Esposito mumbles and lets out a sigh of anger, &ldquo;It&rsquo;s the anger, I don&rsquo;t know, It happens Russo, You know how it is&rdquo; he raises his voice &ldquo;And it&rsquo;s not for no reason, No,&rdquo; he shrugs, &ldquo;he cheated on my little girl, broke the poor girl&rsquo;s heart. You know her Russo&rdquo; he pants as he talks &ldquo;You know she&rsquo;s a fragile girl, She didn&rsquo;t deserve all that&rdquo; he waves his hand around and sighs again.&nbsp;</span></p>
+  <p><span style="font-weight: 400;">&ldquo;Fair that, but you already dealt with this bullshit Tony, his father sleeps at the hospital still with his broken leg, it&rsquo;s been two weeks, the boy got his lesson, he got his face broken, remember?&rdquo;&nbsp;</span></p>
+  <p><span style="font-weight: 400;">Esposito only gets more angry &ldquo;You forgive betrayal that easy huh? What is wrong with you Russ&rdquo; he stops and glares into Russ&rsquo;s face waiting for an answer that&rsquo;ll make him erupt with more anger.</span></p>
+  <p><span style="font-weight: 400;">Russo sees no point in talking to Tony at this point, so he drops the topic and walks forward &ldquo;You know what, you&rsquo;re right, let&rsquo;s drop it, where are you headed&rdquo;&nbsp;</span></p>
+  <p><span style="font-weight: 400;">Tony mumbles in anger and shakes his head, his response isn&rsquo;t clear or constructed, he&rsquo;s waiting for his rage to dissolve.&nbsp;</span></p>
+  <p><span style="font-weight: 400;">&ldquo;Alright give it some time&rdquo; mumbles Russo, &ldquo;You really need this under control Tony&rdquo;</span></p>
+  <p><span style="font-weight: 400;">&ldquo;Right&rdquo; mumbles Tony, &ldquo;I&rsquo;m off to Antonio&rsquo;s, I need prosciutto.&rdquo;&nbsp;</span></p>
+  <p><span style="font-weight: 400;">&ldquo;If you needed prosciutto, you could&rsquo;ve just called, what are you off doing getting it on your own&rdquo; Russo sounds confused.</span></p>
+  <p><span style="font-weight: 400;">&ldquo;Is it so wrong wanting to move my ass from time to time and pick out what prosciutto I need? You know, get some exercise.&rdquo; Tony shrugs.</span></p>
+    <p>&nbsp;</p>
+    <p style="text-align: center;">[unfinished]</p>
+  </div>
+
+  <script>
+    window.onload = () => {
+      const body = document.body;
+      const root = document.documentElement;
+      const themeToggle = document.getElementById("themeToggle");
+
+      body.classList.add("loaded");
+
+      // set button label correctly
+      if (root.classList.contains("dark")) themeToggle.textContent = "light theme.";
+
+      themeToggle.onclick = () => {
+        body.classList.remove("loaded");
+        setTimeout(() => {
+          const dark = root.classList.toggle("dark");
+          localStorage.setItem("theme", dark ? "dark" : "light");
+          themeToggle.textContent = dark ? "light theme." : "dark theme.";
+          body.classList.add("loaded");
+        }, 120);
+      };
+
+      window.fadeOut = (href) => {
+        body.classList.remove("loaded");
+        setTimeout(() => { window.location.href = href; }, 250);
+      };
+    };
+  </script>
+</body>
+</html>

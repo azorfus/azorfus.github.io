@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The cross under the sun</title>
+
+  <!-- APPLY THEME BEFORE PAINT -->
+  <script>
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") document.documentElement.classList.add("dark");
+  </script>
+
+  <style>
+    :root {
+      --bg: #f6f1e7;
+      --fg: #111;
+    }
+
+    html.dark {
+      --bg: #111;
+      --fg: #e6e1d7;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Courier New", Courier, monospace;
+      margin: 0;
+      opacity: 0;
+      transition: opacity 0.25s ease, background 0.2s, color 0.2s;
+    }
+
+    body.loaded { opacity: 1; }
+
+    .topbar {
+      max-width: 720px;
+      margin: 24px auto 0;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+    }
+
+    .content {
+      max-width: 720px;
+      margin: 64px auto;
+      padding: 0 24px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--fg);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    a:hover {
+      background: var(--fg);
+      color: var(--bg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <a href="../index.html" onclick="fadeOut(this.href)">[back]</a>
+    <a id="themeToggle">dark theme.</a>
+  </div>
+
+  <div class="content">
+  <h1><p style="text-align: center;"><span style="font-weight: 400;">The cross under the Sun</span></h1>
+  <p style="text-align: center;"><span style="font-weight: 400;">A short story written by Eniyan</span></p>
+  <p style="text-align: center;"><span style="font-weight: 400;">December 16, 2025</span></p>
+  <p style="text-align: justify;">&nbsp;</p>
+  <p style="text-align: justify;"><span style="font-weight: 400;">DRY DESERT RUINS.</span></p>
+  <p style="text-align: justify;"><span style="font-weight: 400;">Shrubs of greenery and modest mounds of sand run vast throughout the landscape. A man stands in an abandoned bus stop on a national highway. Cigarette in his hand, A large cowboy hat to cover his face from the sun. He glares into the road, expecting a ride to come.&nbsp;</span></p>
+  <p style="text-align: center;">&nbsp;</p>
+  <p style="text-align: center;"><span style="font-weight: 400;">THE MAN</span></p>
+  <p style="text-align: center;"><span style="font-weight: 400;">Too hot a day for January, ain&rsquo;t it</span></p>
+  <p style="text-align: center;"><span style="font-weight: 400;">&nbsp;</span></p>
+  <p style="text-align: justify;"><span style="font-weight: 400;">A tall man, almost faceless, stands beside him. He doesn&rsquo;t seem to mind the sun as much.</span></p>
+  <p style="text-align: center;"><span style="font-weight: 400;">&nbsp;</span></p>
+  <p style="text-align: center;"><span style="font-weight: 400;">THE MAN (Continued)</span></p>
+  <p style="text-align: center;"><span style="font-weight: 400;">Don&rsquo;t you feel the heat, Gabriel?</span></p>
+  <p style="text-align: center;"><span style="font-weight: 400;">My palms are dry with the air.</span></p>
+  <p style="text-align: justify;"><span style="font-weight: 400;">&nbsp;</span></p>
+  <p style="text-align: justify;"><span style="font-weight: 400;">There is no reply from the tall man, Gabriel. He looks as lifeless as the shrubs that surround them; barely alive.</span></p>
+  <p style="text-align: justify;"><span style="font-weight: 400;">THE MAN is Cash. He lives in the deserts of West Texas. He waits for the only single intercity bus that goes through the desert once every few days. Cash missed the bus last Wednesday. A sign on the diner nearby reads NATALIE&rsquo;S DINER. It looks green. Pale with age. Cash remembers last Wednesday. He feels sick. He looks back on his thoughts, and with a sudden glimpse of darkness, he slips into A STATE OF DREAM.</span></p>
+  <p style="text-align: justify;"><span style="font-weight: 400;">You stand in an abandoned flag stop on what seems to be a national highway. Cigarette in your hand, and a large cowboy hat to cover your face from the burning sun. The road is hot. You can see the heat bouncing off the dark surface. You&rsquo;ve been waiting for a while now for the bus that shows up every Wednesday or so. But you&rsquo;re not sure if you&rsquo;re on time; it is high noon. The bus usually shows up early in the morning, but you stand here at noon for some unfathomable reason. You look up at the man standing beside you. He casts a great shadow on the dry ground. The sun wraps around him; you go through great struggle to see him through the bright sun. You put your hands up and peek through the gap of your fingers to make sense of the figure standing beside you. It is Gabriel. A familiar face. Though you&rsquo;re not sure how he seems so familiar. With a hot gush of air pushing at your face. You realize that this does not feel normal. THIS feels false. You SNAP out of your dream like you do every morning.</span></p>
+  <p style="text-align: justify;"><span style="font-weight: 400;">You stand in an abandoned bus stop on the national highway. Cigarette in your hand. A thick leather jacket for the cold. You glare at the road, expecting a ride to come. You look up at Gabriel. He seems lifeless and doesn&rsquo;t mind the cold. You wipe the dust off your jacket.&nbsp;</span></p>
+  <p style="text-align: center;"><span style="font-weight: 400;">&nbsp;</span></p>
+  <p style="text-align: center;"><span style="font-weight: 400;">CASH</span></p>
+  <p style="text-align: center;"><span style="font-weight: 400;">How do you act so immune to the cold?</span></p>
+  <p style="text-align: justify;"><span style="font-weight: 400;">&nbsp;</span></p>
+  <p style="text-align: justify;"><span style="font-weight: 400;">Gabriel does not reply. Only a shadow of his figure is visible. It&rsquo;s tall. The cold air pushes against your hat, and it makes you shiver. You look back at the road. The sound of the bus creaking through the air can be heard a mile away. The rusty white cadaver comes to a stuttering halt. The bus is barely filled halfway through. Maybe there will be more people as time passes. It is dawn afterall, not everyone leaves home for anything this early in the day. What are you doing travelling so early? Where are you planning to go? Where could you possibly go in this dry, withering desert that has enclosed you and your life as far as you can remember.</span></p>
+  <p style="text-align: justify;"><span style="font-weight: 400;">The stairs on the bus creak as you climb on them. The driver nods at you. A pale face with a neatly trimmed beard. You pay him a dollar and 50 cents to get off at about 30 miles away. There&rsquo;s a church up there. You&rsquo;ve been having too many dreams of a cross in the black sky with a shimmering sun pouring over your vision. Maybe visiting the source of the vision could help you sleep better. Maybe that&rsquo;s why you&rsquo;ve been at it for so long. It&rsquo;s a shame that you didn&rsquo;t succeed the last few times you tried. What were you doing out here at noon anyways? The bus only schedules for dawn and midnight. Have you finally lost your mind? Is this what insanity feels like?</span></p>
+  <p style="text-align: justify;"><span style="font-weight: 400;">You take a seat near the window. The air is dry and cool, You can feel it washing over your face. It&rsquo;s strangely comforting. You take off your hat, your head feels lighter now. The hat is heavy, it&rsquo;s made of a blend of fine fur. You look into it, there&rsquo;s a small white fabric stitched to the inseams of the hat with something written on it. You bring it closer to make sense of it. The note reads: THE SUN AND GABRIEL, YOUR TIME HAS COME. MEMENTO MORI.&nbsp;</span></p>
+  <p style="text-align: justify;"><span style="font-weight: 400;">Reading the note makes you feel jarred. You can feel the sun on your face. You are on your knees in a shallow pit, the soil is moist. The sky is shimmering black, and the sun shines bright. The scenery feels supernatural. You&rsquo;re not sure where you are. A tall figure stands before you. He casts a great shadow on the wet ground. The sun wraps around him; you go through great struggle to see him through the glaring sun. You put your hands up and peek through the gap of your fingers to make sense of the behemoth standing before you. It feels biblical. You feel swept away, but you eventually fade back to the moment.&nbsp;</span></p>
+  <p style="text-align: justify;"><span style="font-weight: 400;">The cool wind from the window brushes off on your face. It reminds you of a far, distant memory from the past, it&rsquo;s hazy but you know what it is. The leaky radio fit in the bus hums a song. There&rsquo;s a distinct sound of guitar. A man sings over the music, and he sings of justice and redemption. It sounds familiar, and it makes you feel emotional. Though you&rsquo;re only a few decades into life, you feel old. You feel as if you&rsquo;ve been around for a thousand years, you feel life from the edge of the world. And whatever this might be, is just another day, just another moment which would be long gone in the past soon enough.</span></p>
+  <p style="text-align: justify;"><span style="font-weight: 400;">The word Gabriel provokes something in you. You&rsquo;re not sure what it is.</span></p><p>&nbsp;</p>
+  <p style="text-align: center;">[unfinished]</p>
+  </div>
+
+  <script>
+    window.onload = () => {
+      const body = document.body;
+      const root = document.documentElement;
+      const themeToggle = document.getElementById("themeToggle");
+
+      body.classList.add("loaded");
+
+      // set button label correctly
+      if (root.classList.contains("dark")) themeToggle.textContent = "light theme.";
+
+      themeToggle.onclick = () => {
+        body.classList.remove("loaded");
+        setTimeout(() => {
+          const dark = root.classList.toggle("dark");
+          localStorage.setItem("theme", dark ? "dark" : "light");
+          themeToggle.textContent = dark ? "light theme." : "dark theme.";
+          body.classList.add("loaded");
+        }, 120);
+      };
+
+      window.fadeOut = (href) => {
+        body.classList.remove("loaded");
+        setTimeout(() => { window.location.href = href; }, 250);
+      };
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Developing a self transforming brainf*ck compiler - blog</title>
+
+  <!-- APPLY THEME BEFORE PAINT -->
+  <script>
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") document.documentElement.classList.add("dark");
+  </script>
+
+  <style>
+    :root {
+      --bg: #f6f1e7;
+      --fg: #111;
+      --hl-comment: #8a8577;
+      --hl-string: #7a6a3f;
+      --hl-keyword: #7a3b3b;
+      --hl-number: #3b6b5a;
+      --hl-preproc: #4a5b7a;
+    }
+
+    html.dark {
+      --bg: #111;
+      --fg: #e6e1d7;
+      --hl-comment: #6f6a5c;
+      --hl-string: #c9b06a;
+      --hl-keyword: #d98b8b;
+      --hl-number: #8fd0b8;
+      --hl-preproc: #93a8d9;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Courier New", Courier, monospace;
+      margin: 0;
+      opacity: 0;
+      transition: opacity 0.25s ease, background 0.2s, color 0.2s;
+    }
+
+    body.loaded { opacity: 1; }
+
+    .topbar {
+      max-width: 720px;
+      margin: 24px auto 0;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+    }
+
+    .content {
+      max-width: 720px;
+      margin: 64px auto;
+      padding: 0 24px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, h4 {
+      line-height: 1.3;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-top: 40px;
+    }
+
+    h3 {
+      font-size: 16px;
+      margin-top: 32px;
+    }
+
+    h4 {
+      font-size: 15px;
+      margin-top: 28px;
+    }
+
+    p, li {
+      margin: 14px 0;
+    }
+
+    a {
+      color: var(--fg);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    a:hover {
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    code {
+      font-family: "Courier New", Courier, monospace;
+      background: rgba(128,128,128,0.15);
+      padding: 1px 4px;
+      border-radius: 3px;
+    }
+
+    pre {
+      background: rgba(128,128,128,0.12);
+      border: 1px solid rgba(128,128,128,0.3);
+      padding: 14px 16px;
+      overflow-x: auto;
+      font-size: 13px;
+      line-height: 1.6;
+      border-radius: 4px;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    em {
+      opacity: 0.85;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid rgba(128,128,128,0.3);
+      margin: 40px 0;
+    }
+
+    ol {
+      padding-left: 22px;
+    }
+
+    .tok-comment { color: var(--hl-comment); font-style: italic; }
+    .tok-string  { color: var(--hl-string); }
+    .tok-keyword { color: var(--hl-keyword); }
+    .tok-number  { color: var(--hl-number); }
+    .tok-preproc { color: var(--hl-preproc); }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <a href="../index.html" onclick="fadeOut(this.href)">[back]</a>
+    <a id="themeToggle">dark theme.</a>
+  </div>
+
+  <div class="content">
+    <h1>Developing a self transforming brainf*ck compiler</h1>
+
+    <p><em>Note: All development is done under and for Linux, None of this applies directly to any other operating system.</em></p>
+
+    <h3>Motive:</h3>
+    <p>The research done below is documentation of the process of writing my project: Mindf*ck. A self-transforming brainf*ck compiler (Binary Generator?)</p>
+    <p>The project requires me to write the entire compiler (Binary Generator?) as a flat binary using x64 assembly (for the sake of efficiency and size). To understand how I would implement my idea for the compiler, I explore how to write binaries that replace their own code with new code. In the end, we figure out how to write a tiny binary so small that we write the code into it's unused ELF header spaces to save binary size.</p>
+
+    <h2>Writing self transforming binaries in C:</h2>
+    <p><em>(There are several very good blog posts written by software engineers covering topics on self mutating C code, The sources I used are to be found at the sources section)</em></p>
+    <p><em>(I'm assuming that the reader has a basic understanding of how a program's memory looks like after being loaded into memory by the loader)</em> The text segment of processes in modern x64 computers are protected from being written to, Hence one can only read or execute the code from the segment, In-order to modify code during runtime, we would have to modify the code in the text segment, C lets us change permission for the memory pages <em>(<strong>Pages</strong> - A page, memory page, or virtual page is a fixed-length contiguous block of virtual memory, described by a single entry in a page table. It is the smallest unit of data for memory management in an operating system that uses virtual memory. <a href="https://en.wikipedia.org/wiki/Page_(computer_memory)" target="_blank" rel="noopener">Wikipedia</a>)</em> We do this via <code>mprotect()</code>, mprotect requires us to give it a pointer that must be aligned to a page boundary <em>(Page Aligned: The starting address of a block of data or a program segment is a multiple of the system's memory page size)</em>.</p>
+
+    <p>Example code that moves pointer to the page boundary and then changes the page to read, write, and execute permissions: <a href="https://ephemeral.cx/2013/12/writing-a-self-mutating-x86_64-c-program/" target="_blank" rel="noopener">Source</a></p>
+
+    <pre><code class="language-c">int change_page_permissions_of_address(void *addr) {
+    int page_size = getpagesize();
+    addr -= (unsigned long)addr % page_size;
+
+    if(mprotect(addr, page_size, PROT_READ | PROT_WRITE | PROT_EXEC) == -1) {
+        return -1;
+    }
+
+    return 0;
+}</code></pre>
+
+    <p>Now this lets us write to the text segment of the process's memory. A simple <code>memcpy()</code> call that writes code over an existing function would create a self mutating C program.</p>
+
+    <p>The below code is an example of one such programs which executes a shell. <em>(from source 1)</em></p>
+
+    <pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;errno.h&gt;
+#include &lt;string.h&gt;
+#include &lt;sys/mman.h&gt;
+
+void foo(void);
+int change_page_permissions_of_address(void *addr);
+
+int main(void) {
+    void *foo_addr = (void*)foo;
+
+    // Change the permissions of the page that contains foo() to read, write, and execute
+    // This assumes that foo() is fully contained by a single page
+    if(change_page_permissions_of_address(foo_addr) == -1) {
+        fprintf(stderr, "Error while changing page permissions of foo(): %s\n", strerror(errno));
+        return 1;
+    }
+
+    puts("Calling foo");
+    foo();
+
+    // http://www.exploit-db.com/exploits/13691/
+    char shellcode[] =
+        "\x48\x31\xd2"                              // xor    %rdx, %rdx
+        "\x48\x31\xc0"                              // xor    %rax, %rax
+        "\x48\xbb\x2f\x62\x69\x6e\x2f\x73\x68\x00"  // mov    $0x68732f6e69622f2f, %rbx
+        "\x53"                                      // push   %rbx
+        "\x48\x89\xe7"                              // mov    %rsp, %rdi
+        "\x50"                                      // push   %rax
+        "\x57"                                      // push   %rdi
+        "\x48\x89\xe6"                              // mov    %rsp, %rsi
+        "\xb0\x3b"                                  // mov    $0x3b, %al
+        "\x0f\x05";                                 // syscall
+
+    // Careful with the length of the shellcode here depending on what is after foo
+    memcpy(foo_addr, shellcode, sizeof(shellcode)-1);
+
+    puts("Calling foo");
+    foo();
+
+    return 0;
+}
+
+void foo(void) {
+    int i=0;
+    i++;
+    printf("i: %d\n", i);
+}
+
+int change_page_permissions_of_address(void *addr) {
+    // Move the pointer to the page boundary
+    int page_size = getpagesize();
+    addr -= (unsigned long)addr % page_size;
+
+    if(mprotect(addr, page_size, PROT_READ | PROT_WRITE | PROT_EXEC) == -1) {
+        return -1;
+    }
+
+    return 0;
+}</code></pre>
+
+    <p>Now we do something similar with our brainf*ck compiler, but the problem with writing this in C is, the size of the function <code>foo</code> in the above case for example, is predefined to be 41 bytes, there is no standard way for us to define the size of a function in the text segment with high level languages like C and C++, this restricts the amount of space we can use for our brainf*ck program. C also makes it difficult for us to copy the entire binary into <code>stdout</code> which we can later pipe into a binary.</p>
+
+    <h4>How the Linux kernel deals with virtual memory addressing:</h4>
+    <p>When multiple processes are run in an OS, the kernel has to map the memory for these processes onto RAM, a hardware component called the Memory Management Unit (MMU) handles this mapping. (To read: Internal workings of MMU, TLBs - Translation Lookaside Buffers)</p>
+
+    <p>CPU -- <em>Logical Address</em> --&gt; MMU -- <em>Physical Address</em> --&gt; Physical Memory</p>
+
+    <p>The virtual addresses are mapped onto the physical memory as non - contiguous blocks of memory in pages.</p>
+
+    <h4>How the Linux kernel deals with virtual memory:</h4>
+    <p>The Linux kernel has its own data structure to deal with virtual memory. When the operating system is booted, the bootloader boots the entire kernel into memory.</p>
+
+    <p>Modern operating systems usually load the kernel along with <strong>initramfs (initial RAM file system)</strong> - <em>its a temporary, in-memory file system that the kernel loads during boot to prepare the system before the main root file system is mounted. It also loads some essential kernel modules and drivers.</em> as one user pointed out in a <a href="https://unix.stackexchange.com/questions/257812/is-the-entire-kernel-loaded-into-memory-on-boot" target="_blank" rel="noopener">StackOverflow thread</a>: <code>The kernel in most modern Linux setups is heavily module based, i.e., the kernelproper (loaded on boot into RAM) includes just the bare minimum functionality, all the rest is compiled as modules (loadable at runtime).</code></p>
+
+    <p>The kernel occupies the top most memory region of the Virtual Memory Addresses, Then the rest of the processes are</p>
+
+    <h2>Writing self transforming binaries in x64:</h2>
+
+    <h3>(Extras) Crafting micro binaries on Linux:</h3>
+
+    <h3>(Extras) Standalone binaries in C:</h3>
+    <p>The above section basically gives enough reason for why we are not using C, but this section still remains as I still wanted to do research on this topic. You can skip ahead of this section if you want to.</p>
+    <p>Writing standalone<br>
+    <strong>-ffreestanding in GCC:</strong></p>
+    <p>[unfinished]</p>
+
+    <hr>
+
+    <h3>Sources:</h3>
+    <p>
+      1 - <a href="https://ephemeral.cx/2013/12/writing-a-self-mutating-x86_64-c-program/" target="_blank" rel="noopener">Writing Self Mutating C Programs</a><br>
+      2 - <a href="https://stackoverflow.com/questions/60076669/kernel-virtual-memory-space-and-process-virtual-memory-space" target="_blank" rel="noopener">StackOverFlow - Kernel Virtual Memory Spaces</a><br>
+      3 - <a href="https://unix.stackexchange.com/questions/257812/is-the-entire-kernel-loaded-into-memory-on-boot" target="_blank" rel="noopener">StackExchange - Kernel Loaded into Memory</a><br>
+      4 - <a href="https://en.wikipedia.org/wiki/Kernel_page-table_isolation" target="_blank" rel="noopener">Wikipedia - Kernel page-table isolation</a>
+    </p>
+  </div>
+
+  <script>
+    window.onload = () => {
+      const body = document.body;
+      const root = document.documentElement;
+      const themeToggle = document.getElementById("themeToggle");
+
+      body.classList.add("loaded");
+
+      // set button label correctly
+      if (root.classList.contains("dark")) themeToggle.textContent = "light theme.";
+
+      themeToggle.onclick = () => {
+        body.classList.remove("loaded");
+        setTimeout(() => {
+          const dark = root.classList.toggle("dark");
+          localStorage.setItem("theme", dark ? "dark" : "light");
+          themeToggle.textContent = dark ? "light theme." : "dark theme.";
+          body.classList.add("loaded");
+        }, 120);
+      };
+
+      window.fadeOut = (href) => {
+        body.classList.remove("loaded");
+        setTimeout(() => { window.location.href = href; }, 250);
+      };
+
+      // --- minimal syntax highlighter (C-ish) ---
+      const KEYWORDS = new Set([
+        "int","void","char","unsigned","long","short","float","double",
+        "if","else","for","while","return","struct","typedef","const",
+        "static","sizeof","break","continue","switch","case","default"
+      ]);
+
+      function highlight(src) {
+        let out = "";
+        let i = 0;
+        const n = src.length;
+
+        while (i < n) {
+          const c = src[i];
+
+          // line comment
+          if (c === "/" && src[i + 1] === "/") {
+            let j = i;
+            while (j < n && src[j] !== "\n") j++;
+            out += `<span class="tok-comment">${src.slice(i, j)}</span>`;
+            i = j;
+            continue;
+          }
+
+          // preprocessor line
+          if (c === "#" && (i === 0 || src[i - 1] === "\n")) {
+            let j = i;
+            while (j < n && src[j] !== "\n") j++;
+            out += `<span class="tok-preproc">${src.slice(i, j)}</span>`;
+            i = j;
+            continue;
+          }
+
+          // string literal (handles escaped quotes)
+          if (c === '"') {
+            let j = i + 1;
+            while (j < n && src[j] !== '"') {
+              if (src[j] === "\\") j++;
+              j++;
+            }
+            j = Math.min(j + 1, n);
+            out += `<span class="tok-string">${src.slice(i, j)}</span>`;
+            i = j;
+            continue;
+          }
+
+          // hex / decimal number
+          if (/[0-9]/.test(c)) {
+            let j = i;
+            while (j < n && /[0-9a-fA-Fx]/.test(src[j])) j++;
+            out += `<span class="tok-number">${src.slice(i, j)}</span>`;
+            i = j;
+            continue;
+          }
+
+          // identifier / keyword
+          if (/[A-Za-z_]/.test(c)) {
+            let j = i;
+            while (j < n && /[A-Za-z0-9_]/.test(src[j])) j++;
+            const word = src.slice(i, j);
+            if (KEYWORDS.has(word)) {
+              out += `<span class="tok-keyword">${word}</span>`;
+            } else {
+              out += word;
+            }
+            i = j;
+            continue;
+          }
+
+          // default: copy char as-is (already HTML-escaped in source)
+          out += c;
+          i++;
+        }
+
+        return out;
+      }
+
+      document.querySelectorAll("pre code.language-c").forEach((block) => {
+        block.innerHTML = highlight(block.innerHTML);
+      });
+    };
+  </script>
+</body>
+</html>
